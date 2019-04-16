@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Start
+title: Home
 nav_order: 1
 permalink: /
 ---
@@ -14,5 +14,12 @@ In der folgenden Tabelle sind diese zusammengefasst:
 
 |Name | Route | Zweck |
 |-----|-------|-------|
-|[Admin](https://ioer-dresden.github.io/monitor-api-doku/admin)| **/admin** | Verwaltung des Monitors und der OGC-Services, nur für angemeldetet Nutzer|
-|[SoRa](https://ioer-dresden.github.io/monitor-api-doku/sora)| **/sora** | Dienste für das Forschungsporjekt [SoRa](http://www.sora-projekt.de/){:target="_blank"}|
+|[Admin](https://ioer-dresden.github.io/monitor-api-doku/docs/admin)| **/admin** | Verwaltung des Monitors und der OGC-Services, nur für angemeldete Nutzer|
+|[SoRa](https://ioer-dresden.github.io/monitor-api-doku/sora)| **/sora** | Dienste für das Forschungsprojekt [SoRa](http://www.sora-projekt.de/){:target="_blank"}|
+|[User](https://ioer-dresden.github.io/monitor-api-doku/user)| **/user** | Nutzerverwaltung für die Anmeldung an der API |
+
+Die anderen Module haben folgende Aufgaben:
+
+| Name | Zweck |
+|------|-------|
+| **static** | Implementierung auf der Clientenseite |

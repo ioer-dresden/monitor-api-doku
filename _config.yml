@@ -24,7 +24,7 @@ url: "https://ioer-dresden.github.io" # the base hostname & protocol for your si
 search_enabled: true
 
 aux_links:
-  "IÖR-Monitor auf GitHub":
+  "IÖR-Monitor-API auf GitHub":
     - "//ioer-dresden/monitor-api"
 
 # Build settings
