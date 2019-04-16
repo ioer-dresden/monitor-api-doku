@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: IÖR-Monitor Dokumentation
+title: IÖR-Monitor API Dokumentation
 email: monitor@ioer.de
 description: >- # this means to ignore newlines until "baseurl:"
   Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung
