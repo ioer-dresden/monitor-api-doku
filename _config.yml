@@ -19,13 +19,13 @@ description: >- # this means to ignore newlines until "baseurl:"
   Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung
 #baseurl: ""
 #url: ""
-baseurl: "/monitor-doku" # the subpath of your site, e.g. /blog
+baseurl: "/monitor-api-doku" # the subpath of your site, e.g. /blog
 url: "https://ioer-dresden.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 search_enabled: true
 
 aux_links:
   "IÖR-Monitor auf GitHub":
-    - "//github.com//LorenMucha/IOER-Monitor"
+    - "//ioer-dresden/monitor-api"
 
 # Build settings
 markdown: kramdown
