@@ -14,9 +14,9 @@ In der folgenden Tabelle sind diese zusammengefasst:
 
 |Name | Route | Zweck |
 |-----|-------|-------|
-|[Admin](https://ioer-dresden.github.io/monitor-api-doku/docs/admin)| **/admin** | Verwaltung des Monitors und der OGC-Services, nur für angemeldete Nutzer|
-|[SoRa](https://ioer-dresden.github.io/monitor-api-doku/sora)| **/sora** | Dienste für das Forschungsprojekt [SoRa](http://www.sora-projekt.de/){:target="_blank"}|
-|[User](https://ioer-dresden.github.io/monitor-api-doku/user)| **/user** | Nutzerverwaltung für die Anmeldung an der API |
+|[Admin]({{site.baseurl}}/docs/admin)| **/admin** | Verwaltung des Monitors und der OGC-Services, nur für angemeldete Nutzer|
+|[SoRa]({{site.baseurl}}/sora)| **/sora** | Dienste für das Forschungsprojekt [SoRa](http://www.sora-projekt.de/){:target="_blank"}|
+|[User]({{site.baseurl}}/monitor-api-doku/user)| **/user** | Nutzerverwaltung für die Anmeldung an der API |
 
 Die anderen Module haben folgende Aufgaben:
 
