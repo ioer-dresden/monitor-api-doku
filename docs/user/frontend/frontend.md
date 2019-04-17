@@ -17,5 +17,5 @@ In der folgenden Tabelle ist die Klasse **ApiKey** dokumentiert:
 
 |Methode | Values | Return | Info |
 |--------|--------|--------|-------|
-|**constructur** | props | Constructor :laughing:	 |  |
+|**constructur** | props | Constructor :laughing: |  |
 
