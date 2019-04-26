@@ -3,14 +3,15 @@ layout: default
 title: Frontend
 parent: User
 ---
-## Technologien
+## Komponenten
 ### Registrierung und Anmeldung
 Die Gestaltung der Graphischen Benutzeroberfläche wurde mit **[Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/){:target="_blank"}** realisiert.
 ![Register]({{site.baseurl}}/assets/images/register_view.png)
 Hiermit konnte das _Styling_ der GUI-Elemente an die Bibliothek abgegeben werden, welche auch den Responsive Part übernimmt.
 Diese Technologie wurde auch in der Anmeldung eingesetzt.
+Innhalb dieser Komponenten wurden nur die _Standard_ HTML-Methoden innerhalb des jeweiligen Formulars eingesetzt.
 ### Nutzerbereich
-#### **ApiKey.jsx**
+### _ApiKey.jsx_
 Um einen _Key_ zu Generieren muss der Nutzer den entsprechenden Button klicken. Dieser wird vom _Flask_ Backend generiert. Die Kommunikation erfolgt dabei über **HTTPS-GET** mit der Unterstützung von **[JQuery-Ajax](http://api.jquery.com/jquery.ajax/)**. Der Generierungsvorgang wird im Abschnitt [Backend]({{site.baseurl}}/docs/user/backend/backend.html) dokumentiert.
 Die Klasse **ApiKey** erbt dabei von _[React.Component](https://reactjs.org/docs/react-component.html)_.
 ![APIKEY]({{site.baseurl}}/assets/images/api-key.png)
@@ -24,12 +25,12 @@ In der folgenden Tabelle ist die Klasse **ApiKey** dokumentiert:
 | **insert**|String: (key,username,user_id) | | Methode welche anhand der übergebenen Parameter den Generierten Parameter an das Backend übergibt, welches den Schlüssel für den Nutzer in der **PostgreSQL** speichert.|
 | **render**| | JSX | rendert die Komponente im [ReactDOM](https://reactjs.org/docs/react-dom.html) |
 
-#### **Menü.jsx**
+### _Menü.jsx_
 Auswahlmenü für den Nutzer, in welchem er zwischen den Seiten hin- und herschalten kann.
 ![Menu]({{site.baseurl}}/assets/images/menu.png)
 Die Klasse an sich hat nur die Aufgabe das Menü zu rendern und damit wiederverwendbar zu machen.
 
-#### **service.js**
+### _service.js_
 ![Services]({{site.baseurl}}/assets/images/services.png)
 Innerhalb der Datei wird die Tabelle, welche dem Nutzer alle zur Verfügung gestellten OGC-Services zeigt, generiert und die notwendigen **Events** im DOM registriert.
 Durch die Verwendung der _JQuery_ Bibliothek **[DataTables](https://datatables.net/)** wird hier nicht React eingesetzt sondern _JavaScript_-Objekte. Diese werden folgend dokumentiert.
