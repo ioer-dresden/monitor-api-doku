@@ -10,6 +10,8 @@ Die Gestaltung der Graphischen Benutzeroberfläche wurde mit **[Bootstrap](https
 Hiermit konnte das _Styling_ der GUI-Elemente an die Bibliothek abgegeben werden, welche auch den Responsive Part übernimmt.
 Diese Technologie wurde auch in der Anmeldung eingesetzt.
 Innhalb dieser Komponenten wurden nur die _Standard_ HTML-Methoden innerhalb des jeweiligen Formulars eingesetzt.
+
+[Login](https://monitor.ioer.de/monitor_api/login){: .btn}{:target="_blank"} [Registrierung](https://monitor.ioer.de/monitor_api/signup){: .btn}{:target="_blank"}
 ### Nutzerbereich
 ### _ApiKey.jsx_
 Um einen _Key_ zu Generieren muss der Nutzer den entsprechenden Button klicken. Dieser wird vom _Flask_ Backend generiert. Die Kommunikation erfolgt dabei über **HTTPS-GET** mit der Unterstützung von **[JQuery-Ajax](http://api.jquery.com/jquery.ajax/)**. Der Generierungsvorgang wird im Abschnitt [Backend]({{site.baseurl}}/docs/user/backend/backend.html) dokumentiert.
