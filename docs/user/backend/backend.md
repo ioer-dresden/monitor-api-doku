@@ -57,13 +57,42 @@ db.session.add(new_user)
 ``` 
 Wurde der Nutzer angelegt, wird eine Mail an seine angegebene Adresse geschickt, um den Account zu verifizieren. Diese Aufgabe wird von der **Route** _[Mail-Confirm](#mail_confirm)_ übernommen.
 
+Für den Clienten wird das _Template_ **signup.html** aus dem **[static]({{site.baseurl}}/docs/static)**-Verzeichnis gerendert, über dieses erfolgt die Eingabe. Fehler werden durch **[Flask-Markup]()** in das template eingefügt.
+
 ### route **(/confirm/token)** {#mail_confirm}
+Diese **Route** ruft die Methode _confirm_email(token_pass)_ auf, ihr muss der generierte [Token](#token) übergeben werden. Hierbei wird die Email-Adresse anhand des generierten Tokens überprüft. Der Nutzer bekommt nach seiner Anmeldung eine Mail mit dem Registrierungslink, beim anklicken wird er an diesen Enpoint geleitet.
+Ist der Token korrekt wird in der **[Datenbank]({{site.baseurl}}/docs/user/database/database.html)** in der Tabelle _users_ die Spalte _confirmed_ auf **True** gesetzt. 
+Am Schluss wird der User ausgeloggt, um sich anzumelden.
+
+Bei einem Fehler wird die entsprechende Fehlermeldung angezeigt.
+
+Für den Clienten wird das _Template_ **confirmed_mail.html** aus dem **[static]({{site.baseurl}}/docs/static)**-Verzeichnis gerendert. 
 
 ### route **(/services)** {#services}
 
 ## Models {#models}
 ### User {#user}
+Diese Klasse erbt von **[UserMixin](https://flask-login.readthedocs.io/en/latest/)** und **[db.Model](https://flask-login.readthedocs.io/en/latest/)** und ist das _Grundgerüst_ eines neuen/angemeldeten Nutzers.
+
 ![uml]({{site.baseurl}}/assets/images/user.png)
+
+| Methodenname | Parameter | Return | Info |
+|------------|---------|------|----|
+| __init__ | username, password, email,lastname,firstname,facility,access,business,confirmed,confirmed_on=None | Constructor :wink: | Diese Methode erstellt eine neue Instanz der Klasse User, hierbei ist der Parameter confirmed_on als **Default** _None_. |
+|  is_authenticated | |Boolean:state | Methode welche wiedergibt, ob der Nutzer authentifiziert ist, also ob seine Mail korrekt ist |
+| is_active | | String:access | gibt wieder, welche rechte der Nutzer besitzt &rarr; **TODO**|
+| is_anonymous | |Boolean:state | zeigt an ob der Nutzer einen Anonymen Status besitzt &rarr; **TODO** |
+| get_id | | int:id | gibt die **Id** des Nutzers zurück |  
+
+### Token {#token}
+Diese Klasse regelt das Verifizieren und erstellen eines **Token**. Sie wird hierbei bei der Überprüfung der Mailadresse des Nutzers eingesetzt.  Für die Serilizierung wurde die Bibliothek **[itsdangerous](https://pythonhosted.org/itsdangerous/){:target="_blank"}** eingesetzt.
+
+![token]({{site.baseurl}}/assets/images/token.png)
+
+| Methodenname | Parameter | Return | Info |
+|------------|---------|------|----|
+| generate_confirmation_token() | String:email | String:token | Methode, welche aus der übergebenen Mailadresse einen Token erstellt |
+| confirm_token | String:token, Int:expiration | String:email | Methode welche den Token zu der übergebenen Mail transformiert. Anhand der _expiration_ kann festgelegt werden, wie lange der Token gültig ist. Default ist **3600**|
 
 ## Sicherheit {#security}
 In diesem Kapitel wird der Punkt Sicherheit der API-Dokumentiert, hierbei wurde größtenteils auf die _On-Board_ Mittel der _Flask_-Library zurückgegriffen.
@@ -78,7 +107,8 @@ Anbei die Fallunterscheidung:
        return redirect("{}login".format(Config.URL_ENDPOINT))
 ```
 ### SQL-Injektion
-_SQL-Injection (dt. SQL-Einschleusung) bezeichnet das Ausnutzen einer Sicherheitslücke in Zusammenhang mit SQL-Datenbanken, die durch mangelnde Maskierung oder Überprüfung von Metazeichen in Benutzereingaben entsteht._
+_SQL-Injection (dt. SQL-Einschleusung) bezeichnet das Ausnutzen einer Sicherheitslücke in Zusammenhang mit SQL-Datenbanken, die durch mangelnde Maskierung oder Überprüfung von Metazeichen in Benutzereingaben entsteht._ [Wikipedia](https://de.wikipedia.org/wiki/SQL-Injection)
+
 Dies kann beispielsweise auftreten wenn Passwort und Username von der Datenbank abgefragt werden und dabei der Template String für den Username so manipuliert wird, das immer **True** zurückgegeben wird.
 In der Anwendung wurde die Bibliothek **[ Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/){:target="_blank"}** eingesetzt. Welche die entsprechenden Nutzer herausfiltert.<br/>
 Am Besipiel wurde die Email übergeben und der Nutzer aus der **DB** authentifiziert.
