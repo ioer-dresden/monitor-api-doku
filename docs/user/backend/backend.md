@@ -8,10 +8,11 @@ parent: User
 - [route**(/user)**](#main)
 - [route**(/login)**](#login)
 - [route**(/signup)**](#signup)
+- [route **(/confirm/token)**](#mail_confirm)
 - [Models](#models)
-
+- [Sicherheit](#security)
 ## routes.py {#routes}
-Der _**route**_ Dekorateur nimmt eine Zeichenfolge , die die URL übereinstimmen. Wenn eine Anfrage nach einer URL, die dieser Zeichenfolge entspricht, von der Anwendung empfangen wird, wird die dekorierte Funktion (auch Ansichtsfunktion genannt ) aufgerufen.
+_Flask selbst ist kaum mehr als ein Bindeglied, das die WSGI-Schicht und die Template-Bibliothek zusammenhält. Insbesondere kümmert es sich um das sogenannte Routing, das URLs auf Funktionen abbildet._ ([admin-magazin](https://www.admin-magazin.de/Das-Heft/2013/01/Webanwendungen-mit-Flask){:target="_blank"})
 ### route**(/)** {#main}
 Dies ist die sogenannte **Main**-Route, hier wird lediglich aus dem Dateiorder **user** innerhalb des **[static]({{site.baseurl}}/docs/static)**-Verzeichnisses die _index.html_ gerendert.
 ### route**(/user)**
@@ -44,6 +45,43 @@ Innerhalb der Methode werden dabei nacheinander folgende Bedingungen überprüft
 
 [Registrierung](https://monitor.ioer.de/monitor_api/signup){: .btn}{:target="_blank"}
 
-Diese Methode hat die Aufgabe die von Nutzer eingetragenen und an den HTTP-Endpoint geschickten Daten in der **[Datenbank]({{site.baseurl}}/docs/user/database/database.html)** zu speichern. 
+Diese Methode hat die Aufgabe die von Nutzer eingetragenen und an den HTTP-Endpoint geschickten Daten in der **[Datenbank]({{site.baseurl}}/docs/user/database/database.html)** zu speichern. Eine weitere Aufgabe besteht darin zu prüfen, ob der Nutzername oder die Mailadresse bereits in der Datenbank vorhanden ist, in diesem Fall wird eine entsprechende Fehlermeldung an den Clienten zurückgegeben.
+Stimmen alle Felder überein wird eine neue Instanz der Klasse-[User](#user) erzeugt und diese in der Datenbank abgelegt. Für das Speichern in der **DB** wird die Bibliothek **[ Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/){:target="_blank"}** verwendet.
+
+Ein Beispiel für das programmatische Anlegen eines neuen Nutzers ist im folgenden Beispiel aufgeführt:
+```python
+new_user = User(username=username, email=email, password=hashed_password, lastname=form.lastname.data,
+                firstname=form.firstname.data, facility=form.facility.data, access=1,
+                business=form.business.data, confirmed=False)
+db.session.add(new_user)
+``` 
+Wurde der Nutzer angelegt, wird eine Mail an seine angegebene Adresse geschickt, um den Account zu verifizieren. Diese Aufgabe wird von der **Route** _[Mail-Confirm](#mail_confirm)_ übernommen.
+
+### route **(/confirm/token)** {#mail_confirm}
+
+### route **(/services)** {#services}
 
 ## Models {#models}
+### User {#user}
+![uml]({{site.baseurl}}/assets/images/user.png)
+
+## Sicherheit {#security}
+In diesem Kapitel wird der Punkt Sicherheit der API-Dokumentiert, hierbei wurde größtenteils auf die _On-Board_ Mittel der _Flask_-Library zurückgegriffen.
+### URL-Manipulierung
+Um auch nur berechtigte Nutzer die jeweilige URL zur Verfügung zu stellen, wurde der Dekorator _**@login_required**_ aus der Bibliothek **[Flask-Login](https://flask-login.readthedocs.io/en/latest/){:target="_blank"}** eingesetzt.
+Ist der Nutzer nicht angemeldet wird er zurück auf die Anmeldeseite geleitet. Somit ist es nicht möglich unangemeldet auf die **[OGC-Service Seite](#services)** zuzugreifen.<br>
+Anbei die Fallunterscheidung:
+```python
+    if current_user.is_authenticated:
+        return render_template('user/services.html', key=current_user.api_key, access=current_user.access)
+    else:
+       return redirect("{}login".format(Config.URL_ENDPOINT))
+```
+### SQL-Injektion
+_SQL-Injection (dt. SQL-Einschleusung) bezeichnet das Ausnutzen einer Sicherheitslücke in Zusammenhang mit SQL-Datenbanken, die durch mangelnde Maskierung oder Überprüfung von Metazeichen in Benutzereingaben entsteht._
+Dies kann beispielsweise auftreten wenn Passwort und Username von der Datenbank abgefragt werden und dabei der Template String für den Username so manipuliert wird, das immer **True** zurückgegeben wird.
+In der Anwendung wurde die Bibliothek **[ Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/){:target="_blank"}** eingesetzt. Welche die entsprechenden Nutzer herausfiltert.<br/>
+Am Besipiel wurde die Email übergeben und der Nutzer aus der **DB** authentifiziert.
+```python
+user = User.query.filter_by(email=email).first()
+```
