@@ -69,6 +69,7 @@ Bei einem Fehler wird die entsprechende Fehlermeldung angezeigt.
 Für den Clienten wird das _Template_ **confirmed_mail.html** aus dem **[static]({{site.baseurl}}/docs/static)**-Verzeichnis gerendert. 
 
 ### route **(/services)** {#services}
+Dieser Service hat lediglich die Aufgabe
 
 ## Models {#models}
 ### User {#user}
