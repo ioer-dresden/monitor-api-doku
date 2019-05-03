@@ -5,12 +5,20 @@ parent: User
 ---
 ## Inhalt
 - [routes.py](#routes)
-- [route**(/user)**](#main)
-- [route**(/login)**](#login)
-- [route**(/signup)**](#signup)
-- [route **(/confirm/token)**](#mail_confirm)
+    - [route**(/user)**](#main)
+    - [route**(/login)**](#login)
+    - [route**(/signup)**](#signup)
+    - [route **(/confirm/token)**](#mail_confirm)
+    - [route **(/services)**](#services)
+    - [route **(/reset)**](#reset)
+    - [route **(/reset/token)**](#reset-token)
 - [Models](#models)
+    - [Mailer](#mailer)
+    - [User](#user)
+    - [Token](#token)
 - [Sicherheit](#security)
+    - [URL-Manipulierung](#url-manipulation)
+    - [SQL-Injektion](#sql-injection)
 ## routes.py {#routes}
 _Flask selbst ist kaum mehr als ein Bindeglied, das die WSGI-Schicht und die Template-Bibliothek zusammenhält. Insbesondere kümmert es sich um das sogenannte Routing, das URLs auf Funktionen abbildet._ ([admin-magazin](https://www.admin-magazin.de/Das-Heft/2013/01/Webanwendungen-mit-Flask){:target="_blank"})
 ### route**(/)** {#main}
@@ -69,11 +77,38 @@ Bei einem Fehler wird die entsprechende Fehlermeldung angezeigt.
 Für den Clienten wird das _Template_ **confirmed_mail.html** aus dem **[static]({{site.baseurl}}/docs/static)**-Verzeichnis gerendert. 
 
 ### route **(/services)** {#services}
-Dieser Service hat lediglich die Aufgabe
+Diese **Route** hat die Aufgabe aus dem **[static]({{site.baseurl}}/docs/static)**-Verzeichnis dem Clienten alle Services aufzulisten. Hierfür wird die _service.html_ gerendert. Die Funktion prüft dabei ob der Nutzer angemeldet ist, um auch nur berechtigte Zugriffe zuzulassen. Ist der Nutzer nicht angemeldet, wird die _login.html_ gerendert.
+
+### route **(/reset)** {#reset}
+
+[Passwort zurücksetzen](https://monitor.ioer.de/monitor_api/reset){: .btn}{:target="_blank"}
+
+![uml]({{site.baseurl}}/assets/images/reset.png)
+
+Diese **Route** hat die Aufgabe das zurücksetzen des Passwortes zu steuern. Hat der Nutzer seine Emailadresse eingegeben, wird überprüft ob dieses in der Datenbank hinterlegt ist.  Trifft dies zu wird ein Token generiert und mit der Hilfe der [**Mailer**](#mailer)-Klasse das Passwort an die angegebene Mailadresse geschickt. der generierte Token wird dabei mit der Hilfe der [**Token**](#token)-Klasse erstellt und wird aus der Mailadresse generiert.
+
+### route **(/reset/token)** {#reset-token}
+
+Diese Route wird aufgerufen, wenn der Nutzer seine Mail zum zurücksetzen des Passwortes bekommen hat und den darin enthaltenen Link klickt.
+
+Ein Beispiel Link wäre folgender:
+```url
+https://monitor.ioer.de/monitor_api/reset/ImwubXVjaGFAaW9lci5kZSI.D6xN-w.Ik_GXgQuTDrleuX_Skg_YHr9K5Y
+``` 
+
+Im ersten Schritt wird der übergebene Token überprüft, ist er korrekt kann das Passwort geändert werden. Ist der Token **nicht korrekt** oder **ausgelaufen** (siehe [**Token**](#token)) 
+
+Durch das gerenderte HTML-Dokument _reset_passwort.html_ aus dem  **[static]({{site.baseurl}}/docs/static)** bekommt der Nutzer die Möglichkeit ein neues Passwort anzugeben.
 
 ## Models {#models}
+
+### Mailer {#mailer}
+Diese Klasse übernimmt im User-Service die Aufgabe alle notwendigen Mails zu verschicken, über die Methode **_send_mail_** wird ein neues **Mail**-Objekt instanziiert, aus der Bibliothek [**Flask-Mail**](https://pythonhosted.org/Flask-Mail/){:target="_blank"} und an den angegebenen User (_to_) gesendet. Der Inhalt der Mail ist dabei innerhalb des _template_ fest vorgegeben und befindet sich im **[static]({{site.baseurl}}/docs/static)** als _reset_password_mail.html_.
+
+![uml]({{site.baseurl}}/assets/images/mailer.png)
+
 ### User {#user}
-Diese Klasse erbt von **[UserMixin](https://flask-login.readthedocs.io/en/latest/)** und **[db.Model](https://flask-login.readthedocs.io/en/latest/)** und ist das _Grundgerüst_ eines neuen/angemeldeten Nutzers.
+Diese Klasse erbt von **[UserMixin](https://flask-login.readthedocs.io/en/latest/)** und **[db.Model](https://flask-login.readthedocs.io/en/latest/)** und ist das _Grundgerüst_ eines neuen/angemeldeten Nutzers. Die KLassen-Variable **_confirmed_** gibt hierbei wieder ob dem Nutzer seine Mailadresse bestätigt ist oder nicht. Default ist Sie **None**.
 
 ![uml]({{site.baseurl}}/assets/images/user.png)
 
@@ -97,7 +132,8 @@ Diese Klasse regelt das Verifizieren und erstellen eines **Token**. Sie wird hie
 
 ## Sicherheit {#security}
 In diesem Kapitel wird der Punkt Sicherheit der API-Dokumentiert, hierbei wurde größtenteils auf die _On-Board_ Mittel der _Flask_-Library zurückgegriffen.
-### URL-Manipulierung
+
+### URL-Manipulierung {#url-manipulation}
 Um auch nur berechtigte Nutzer die jeweilige URL zur Verfügung zu stellen, wurde der Dekorator _**@login_required**_ aus der Bibliothek **[Flask-Login](https://flask-login.readthedocs.io/en/latest/){:target="_blank"}** eingesetzt.
 Ist der Nutzer nicht angemeldet wird er zurück auf die Anmeldeseite geleitet. Somit ist es nicht möglich unangemeldet auf die **[OGC-Service Seite](#services)** zuzugreifen.<br>
 Anbei die Fallunterscheidung:
@@ -107,7 +143,7 @@ Anbei die Fallunterscheidung:
     else:
        return redirect("{}login".format(Config.URL_ENDPOINT))
 ```
-### SQL-Injektion
+### SQL-Injektion {#sql-injection}
 _SQL-Injection (dt. SQL-Einschleusung) bezeichnet das Ausnutzen einer Sicherheitslücke in Zusammenhang mit SQL-Datenbanken, die durch mangelnde Maskierung oder Überprüfung von Metazeichen in Benutzereingaben entsteht._ [Wikipedia](https://de.wikipedia.org/wiki/SQL-Injection)
 
 Dies kann beispielsweise auftreten wenn Passwort und Username von der Datenbank abgefragt werden und dabei der Template String für den Username so manipuliert wird, das immer **True** zurückgegeben wird.
