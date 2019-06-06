@@ -108,7 +108,7 @@ Diese Klasse übernimmt im User-Service die Aufgabe alle notwendigen Mails zu ve
 ![uml]({{site.baseurl}}/assets/images/mailer.png)
 
 ### User {#user}
-Diese Klasse erbt von **[UserMixin](https://flask-login.readthedocs.io/en/latest/)** und **[db.Model](https://flask-login.readthedocs.io/en/latest/)** und ist das _Grundgerüst_ eines neuen/angemeldeten Nutzers. Die KLassen-Variable **_confirmed_** gibt hierbei wieder ob dem Nutzer seine Mailadresse bestätigt ist oder nicht. Default ist Sie **None**.
+Diese Klasse erbt von **[UserMixin](https://flask-login.readthedocs.io/en/latest/)** und **[db.Model](https://flask-login.readthedocs.io/en/latest/)** und ist das _Grundgerüst_ eines neuen/angemeldeten Nutzers. Die Klassen-Variable **_confirmed_** gibt hierbei wieder ob dem Nutzer seine Mailadresse bestätigt ist oder nicht. Default ist Sie **None**. Die Klasse bildet dabei alle Felder der [**Datenbanktabelle**]({{site.baseurl}}/docs/user/database/database.html) **_user_** ab, in welcher alle notwendigen Informationen abgelegt sind.
 
 ![uml]({{site.baseurl}}/assets/images/user.png)
 
