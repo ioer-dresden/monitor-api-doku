@@ -48,5 +48,5 @@ const ogc =  < OGC service={service}/>;
 
  Die Funktion hat die Aufgabe über den [**Request-Manager**](#rqm) den Update Prozess auf dem Backend anzustoßen. War dies erfolgreich gibt das _Backend_ die **_Ergebnis_**-JSON zurück. Diese wird zum besseren Verständnis mit dem [**Modal-Dialog**](#modal) als **Bootstrap**-Card View dargestellt. Aus der JSON-Datei können dabei die Informationen entnommen werden, welche verwendet werden um den Status der Erstellung zu visualisieren.
  
- ![Geosn]({site.baseurl/assets/images/geosn_dialog.jpeg})
+ ![Geosn]({{site.baseurl}}/assets/images/geosn_dialog.jpeg)
  
