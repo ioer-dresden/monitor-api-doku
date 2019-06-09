@@ -47,6 +47,19 @@ const ogc =  < OGC service={service}/>;
  #### **Update der Dienste** {#ogc-update}
 
  Die Funktion hat die Aufgabe über den [**Request-Manager**](#rqm) den Update Prozess auf dem Backend anzustoßen. War dies erfolgreich gibt das _Backend_ die **_Ergebnis_**-JSON zurück. Diese wird zum besseren Verständnis mit dem [**Modal-Dialog**](#modal) als **Bootstrap**-Card View dargestellt. Aus der JSON-Datei können dabei die Informationen entnommen werden, welche verwendet werden um den Status der Erstellung zu visualisieren.
+ In der folgenden Abbildung ist ein Dialogfenster für den **_GeoDN_** Service abgebildet und zeigt dabei auch eine fehlgeschlagene Erstellung eines Diesntes, welcher rot **hinterlegt** wurde.
  
  ![Geosn]({{site.baseurl}}/assets/images/geosn_dialog.jpeg)
  
+ ### Request Manager {#rqm}
+ 
+ Diese Klasse übernimmt die Kommuikation mit dem **Backend** und weißt dieses an, die Aktualisierung der Dienste anzustoßen. Dafür wurde die Methode _updateOGCService()_ implementiert, welcher als Paratemeter der zu erstellende Dienst (wms,wcs,wfs,geosn) übergeben wird. Als **Ajax**-Bibliothek wurde [**Axios**](https://github.com/axios/axios){:target="blank"} eingesetzt. Nachfolgend ist der Code abgebilet.
+ 
+ ˋˋˋjavascript
+ class RequestManager{
+    static updateOGCService(_service){
+        console.info("create services for: ",_service);
+        return axios.post('https://monitor.ioer.de/monitor_api/admin/'+_service);
+    }
+}
+ˋˋˋ
