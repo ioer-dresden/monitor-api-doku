@@ -29,12 +29,12 @@ In der nachfolgenden Tabelle sind die Paramter für die Erstellung aufgelistet:
 
 Das Schlüsselwort wird als _React_-Property an das **OGC-Modul** übergeben.
  
-ˋˋˋjavascript
+```javascript
 const ogc =  < OGC service={service}/>;
             ReactDOM.render(
             ogc,
             document.getElementById('page_content'));
- ˋˋˋ
+ ```
 
  ### OGC-Dienste {#ogc}
  
