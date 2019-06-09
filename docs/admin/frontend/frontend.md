@@ -55,11 +55,12 @@ const ogc =  < OGC service={service}/>;
  
  Diese Klasse übernimmt die Kommuikation mit dem **Backend** und weißt dieses an, die Aktualisierung der Dienste anzustoßen. Dafür wurde die Methode _updateOGCService()_ implementiert, welcher als Paratemeter der zu erstellende Dienst (wms,wcs,wfs,geosn) übergeben wird. Als **Ajax**-Bibliothek wurde [**Axios**](https://github.com/axios/axios){:target="blank"} eingesetzt. Nachfolgend ist der Code abgebilet.
  
- ˋˋˋjavascript
- class RequestManager{
+```javascript
+
+class RequestManager{
     static updateOGCService(_service){
         console.info("create services for: ",_service);
         return axios.post('https://monitor.ioer.de/monitor_api/admin/'+_service);
     }
 }
-ˋˋˋ
+```
