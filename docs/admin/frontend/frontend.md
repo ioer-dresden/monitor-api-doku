@@ -36,7 +36,7 @@ const ogc =  < OGC service={service}/>;
             document.getElementById('page_content'));
  ```
 
- ### OGC-Dienste {#ogc}
+### OGC-Dienste {#ogc}
  
 Über dieses Modul können die einzelnen Funktionalitäten ausgewählt werden, mit welchen der jeweils gewählte Service manipuliert werden kann. Im Moment sind alle dafür notwendige Funktionen:
  - **Update der Dienste**
@@ -46,7 +46,7 @@ const ogc =  < OGC service={service}/>;
  
 vorhanden, jedoch ist nur der **Upate der Dienste** implementiert, die anderen Funktionen dienen als Platzhalter.
  
- #### Update der Dienste {#ogc-update}
+#### Update der Dienste {#ogc-update}
 
 Die Funktion hat die Aufgabe über den [**Request-Manager**](#rqm) den Update Prozess auf dem Backend anzustoßen. War dies erfolgreich gibt das _Backend_ die **_Ergebnis_**-JSON zurück. Diese wird zum besseren Verständnis mit dem [**Modal-Dialog**](#modal) als **Bootstrap**-Card View dargestellt. Aus der JSON-Datei können dabei die Informationen entnommen werden, welche verwendet werden um den Status der Erstellung zu visualisieren.
  In der folgenden Abbildung ist ein Dialogfenster für den **_GeoDN_** Service abgebildet und zeigt dabei auch eine fehlgeschlagene Erstellung eines Diesntes, welcher rot **hinterlegt** wurde.
