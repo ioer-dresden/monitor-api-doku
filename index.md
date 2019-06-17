@@ -23,3 +23,4 @@ Die anderen Module haben folgende Aufgaben:
 | Name | Zweck |
 |------|-------|
 | **static** | Implementierung auf der Clientenseite |
+|**templates** | html Dateien für die jeweilige Seite + Email **Vorlagen**|
