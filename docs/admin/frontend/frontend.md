@@ -3,7 +3,7 @@ layout: default
 title: Frontend
 parent: Admin
 ---
-
+# Frontend
 Das Frontend wurde mit der JavaScript-Bibliothek [**React**](https://reactjs.org/){:target="blank"} verwirklicht. Es besteht hauptsächlich aus 3 Modulen, welche in diesem Kapitel vorgestellt werden. Zur Kommunikation mit dem [**Backend**]({{site.baseurl}}/docs/admin/backend/backend.html) wurde ein [**Request Manager**](#rqm) implementiert, welcher [**Axios**](https://github.com/axios/axios){:target="blank"} einsetzt.
 Alle vorgestellten Klassen erben von der Abstrakten Klasse [**React.Component**](https://reactjs.org/docs/react-component.html){:target="blank"}, bis auf den Request Manager.
 
@@ -22,8 +22,8 @@ Alle vorgestellten Klassen erben von der Abstrakten Klasse [**React.Component**]
 
 ##  React-Module
 ### Seitenmenü {#seidenav}
-Das Seitenmenü hat die Hauptaufgabe die Funktionalitäten zum hin- und herschalten zwischen den einzelnen Funktionen zu ermöglichen und bei einem _OnClick_-Event ein neues Modul [**_OGC_**](#ogc) zu erstellen. Hierfür wird in dem **_Data_**-Paramter der entsprechende Schlüssel abgefragt und übergeben.
-In der nachfolgenden Tabelle sind die Paramter für die Erstellung aufgelistet:
+Das Seitenmenü hat die Hauptaufgabe die Funktionalitäten zum hin- und herschalten zwischen den einzelnen Funktionen zu ermöglichen und bei einem _OnClick_-Event ein neues Modul [**_OGC_**](#ogc) zu erstellen. Hierfür wird in dem **_Data_**-Parameter der entsprechende Schlüssel abgefragt und übergeben.
+In der nachfolgenden Tabelle sind die Parameter für die Erstellung aufgelistet:
 
 |id|Funktion|
 |--|--------------|
@@ -60,7 +60,7 @@ Die Funktion hat die Aufgabe über den [**Request-Manager**](#rqm) den Update Pr
  
 ### Request Manager {#rqm}
  
-Diese Klasse übernimmt die Kommuikation mit dem **Backend** und weißt dieses an, die Aktualisierung der Dienste anzustoßen. Dafür wurde die Methode _updateOGCService()_ implementiert, welcher als Paratemeter der zu erstellende Dienst (wms,wcs,wfs,geosn) übergeben wird. Als **Ajax**-Bibliothek wurde [**Axios**](https://github.com/axios/axios){:target="blank"} eingesetzt. Nachfolgend ist der Code abgebilet.
+Diese Klasse übernimmt die Kommunikation mit dem **Backend** und weißt dieses an, die Aktualisierung der Dienste anzustoßen. Dafür wurde die Methode _updateOGCService()_ implementiert, welcher als Parameter der zu erstellende Dienst (wms,wcs,wfs,geosn) übergeben wird. Als **Ajax**-Bibliothek wurde [**Axios**](https://github.com/axios/axios){:target="blank"} eingesetzt. Nachfolgend ist der Code abgebildet.
  
 ```javascript
 
@@ -70,3 +70,4 @@ class RequestManager{
         return axios.post('https://monitor.ioer.de/monitor_api/admin/'+_service);
     }
 }
+```
