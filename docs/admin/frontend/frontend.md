@@ -71,3 +71,7 @@ class RequestManager{
     }
 }
 ```
+
+### Modal Dialog {#modal}
+
+Diese Klasse blendet einen sogenannten Dialog ein, dessen Style von **Bootstrap** [**Modal**](https://getbootstrap.com/docs/4.0/components/modal/){:target="blank"} definiert wird. Über den Konstruktor wird dieser _React-Komponente_ das HTML übergeben, welches innerhalb des Dialoges dargestellt (gerendert) werden soll.  

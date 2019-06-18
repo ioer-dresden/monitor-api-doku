@@ -9,6 +9,9 @@ parent: Admin
 Die Hauptlast bei für die Administrierung der Dienste liegt im Backend. Welche in diesem Kapitel anhand ihrer Klassen und Schichten dokumentiert werden soll.
 
 - [**Services**](#services)
+    - [**OGC-Dienste**](#ogc-factory)
+    - [**Indicator-Values**](#ind-values)
+    - [**GeoMIS**](#geosn)
 - [**Interfaces**](#interfaces)
 - [**Models**](#models)
 - [**routes**](#routes)
@@ -52,7 +55,7 @@ WMS-Service
 {: .label }
 
 Die Klassen _**WCS-Services, WFS-Service und WMS-Service**_ implementieren die vom [**_OgcService_**](#ogc-interface)-Interface definierten Methoden.
-Hierbei wird in der Methode _createAllServices_ alle für die **OGC-Rasterdienste bzw. Vektordienste** freigegebenen Indikatoren vom Backend abgefragt. Diese Aufgabe wird von der Klasse [**_Indicator-Values_**](#ind-values) übernommen.
+Hierbei werden in der Methode _createAllServices_ alle für die **OGC-Rasterdienste bzw. Vektordienste** freigegebenen Indikatoren vom Backend abgefragt. Diese Aufgabe wird von der Klasse [**_Indicator-Values_**](#ind-values) übernommen.
 Anhand einer Schleife wird für jeden verfügbaren Indikator ein neuer [**_IoerIndicator_**](#ind) instanziiert und an die _writeFile_ Methode übergeben. Diese erstellt anhand der _Getter_-Methoden des übergebenen Indikators das entsprechende _Mapfile_ in dem angegebenen Pfad. Der Pfad wird hierbei im Konstruktor übergegeben, diese Aufgabe übernimmt die [**Factory**](#ogc-factory).
 
 <iframe src="{{site.baseurl}}/assets/html/wcs-service.html" frameborder="0" allowfullscreen onload="this.width=screen.width*0.5;this.height=screen.height*0.6;"></iframe>
@@ -67,8 +70,57 @@ Folgend sind die Parameter und Methoden dokumentiert.
 
 ### Indicator-Values {#ind-values}
 
+Diese Klasse hat die Aufgabe für die Übergebene Raumgliederung alle verfügbaren Indikatoren vom [**Monitor-Backend**](https://ioer-dresden.github.io/monitor-doku/docs/backend){:target="blank"} abzurufen. Über die Methode _getAllAvaliableServiceValues_ werden anhand des Paramters Raumgliederung (raster,gebiete) alle verfügbaren Indikatoren abgerufen und ein JSON-Objekt zurückgegeben. Der Code der Klasse ist nachfolgend abgebildet.
+
+```python
+class IndicatorValues:
+    def __init__(self,format):
+        self.url = Config.URL_BACKEND_MONITOR
+        self.json = '{"format":{"id":"%s"},"query":"getAllIndicators"}' % format
+        self.format=format
+        req = requests.post(self.url, data={'values':self.json})
+        self.values = json.loads(req.text)
+        print (self.values)
+
+    #methon to return all possible indicator values which are possible for an indicator
+    def getAllAvaliableServiceValues(self,service):
+        res =[]
+        for x in self.values:
+            cat_name = self.values[x]['cat_name']
+            cat_name_en = self.values[x]['cat_name_en']
+            values = self.values[x]['indicators']
+            ind_values = []
+            for i in values:
+                # if 1: the service is avaliable else not
+                if int(values[i]["ogc"][service]) == 1:
+                    ind_val=dict(values[i])
+                    ind_id = dict({"id":i})
+                    merge = dict()
+                    merge.update(ind_id)
+                    merge.update(ind_val)
+                    del merge['atkis']
+                    del merge['ogc']
+                    ind_values.append(merge)
+
+            res.append({'cat_id':x,'cat_name':cat_name,'cat_name_en':cat_name_en,"values":ind_values})
+
+        return res
+```
+
+### GeoSN {#geosn}
+
+<iframe src="{{site.baseurl}}/assets/html/geosn.html" frameborder="0" allowfullscreen onload="this.width=screen.width*0.5;this.height=screen.height*0.2;"></iframe>
+
+Diese Klasse implementiert das Interface [**GeoSN-Service**](#geosn-service) und hat die Aufgabe, die Dienste des IÖR-Monitors mit dem [**GeoMIS**](https://geomis.sachsen.de/terraCatalog/Start.do;jsessionid=C1A9B5D0D432772FDC164C57CB57845B){:target="blank"} zu verknüpfen. Der Service wurde notwendig, da zum aktuellen Zeitpunkt keine **API** auf der Seite des _GeoMIS_ vorhanden ist, welche diese Aufgabe übernimmt.
+
+Anhand der vom <a href="mailto:geomis@geosn.sachsen.de">GeoMIS :email:</a> bereitgestellten XML-Dateien, werde diese mit den aktuellen Informationen der Datenbank synchronisiert. Hierfür parst die Methode _updateFile_ alle _XML-Dateien_ in dem vorgegebenen Verzeichnis. Passt die Parametrisierung mit der gesetzten Klassenvariable _Indikator_ überein, wird dieses aktualisiert. Hierfür  fällt der händische Update-Vorgang in der GUI des GeoMIS weg. Durch die Freigabe des [_Verzeichnisses_](https://monitor.ioer.de/ogc/){:target="blank"} nach außen, kann das GeoMIS die in den XML-Dateien definierten Dienste **_harvesten_**.   
+
+Die Methode _update_ ruft von Dienst [_Indicator-Values_](#ind-values) alle Raster und Vektor Indikatoren auf, welche das IÖR nach außen freigibt und ruft auf deren Basis die private Methode _updateFile_ auf. Iterativ wird dabei die Klassenvariable _Indikator_ gesetzt, welche jeweils das Model [_IÖR-Indikator_](#ind) ist. 
+
+
 ## Interfaces {#interfaces}
 ### OgcService {#ogc-interface}
+### GeoSN-Service {#geosn-service}
 
 ## Models {#models}
-### IÖR-Indikator (#ind)
+### IÖR-Indikator {#ind}
