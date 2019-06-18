@@ -117,10 +117,20 @@ Anhand der vom <a href="mailto:geomis@geosn.sachsen.de">GeoMIS :email:</a> berei
 
 Die Methode _update_ ruft von Dienst [_Indicator-Values_](#ind-values) alle Raster und Vektor Indikatoren auf, welche das IÖR nach außen freigibt und ruft auf deren Basis die private Methode _updateFile_ auf. Iterativ wird dabei die Klassenvariable _Indikator_ gesetzt, welche jeweils das Model [_IÖR-Indikator_](#ind) ist. 
 
-
 ## Interfaces {#interfaces}
+_Eine **Schnittstelle** (englisch interface) gibt in der objektorientierten Programmierung an, welche Methoden in den unterschiedlichen Klassen vorhanden sind oder vorhanden sein müssen._ [Quelle](https://de.wikipedia.org/wiki/Schnittstelle_(Objektorientierung)){:target="blank"}
+
 ### OgcService {#ogc-interface}
+
+<iframe src="{{site.baseurl}}/assets/html/ogc-services.html" frameborder="0" allowfullscreen onload="this.width=screen.width*0.5;this.height=screen.height*0.18;"></iframe>
+
+Dieses Interface definiert die notwendigen Methoden für die Erstellung eines IÖR-OGC Dienstes.
+
 ### GeoSN-Service {#geosn-service}
+
+<iframe src="{{site.baseurl}}/assets/html/geosn-service.html" frameborder="0" allowfullscreen onload="this.width=screen.width*0.5;this.height=screen.height*0.18;"></iframe>
+
+Dieses Interface definiert die notwendigen Methoden für die Erstellung eines GeoSN Dienstes.
 
 ## Models {#models}
 ### IÖR-Indikator {#ind}
