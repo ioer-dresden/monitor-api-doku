@@ -132,5 +132,63 @@ Dieses Interface definiert die notwendigen Methoden für die Erstellung eines I�
 
 Dieses Interface definiert die notwendigen Methoden für die Erstellung eines GeoSN Dienstes.
 
+### Indikator {#int-ind}
+
+<iframe src="{{site.baseurl}}/assets/html/indikator.html" frameborder="0" allowfullscreen onload="this.width=screen.width*0.5;this.height=screen.height*0.35;"></iframe>
+
+Dieses Interface definiert einen Indikator für das IÖR-Indikatorensystem.
+
 ## Models {#models}
+_Repräsentiert den internen Zustand eines Objekts und speichert alle interessanten Geschäftsdaten. Ein Model bietet Methoden an, mit denen sich der aktuelle Zustand erfragen und ändern lässt._ [Quelle](Repräsentiert den internen Zustand eines Objekts und speichert alle interessanten Geschäftsdaten. Ein Model bietet Methoden an, mit denen sich der aktuelle Zustand erfragen und ändern lässt.){:target="blank"}
+
 ### IÖR-Indikator {#ind}
+
+Diese Klasse wird verwendet um innerhalb der Sevices einen Indikator zu instanziieren und damit auf die getter zuzugreifen. Das Verhalten der Klasse wird dabei durch das Interaface [Indikator](#int-ind) definiert.
+Die Klasse besitzt auch eine Methode toJSON, welche verwendet wird um in den Service-Klassen den Status der Indikatorerstellung festzuhalten. Hierfür wird ein sogenannter _**state**_ übergeben. Nachfolgend ist der Code abgebildet:
+
+```python
+def toJSON(self,state="create"):
+    return {self.id:{
+            "state": state,
+            "name": self.name,
+            "description": self.description,
+            "times": self.time_string,
+            "spatial_extends": self.spatial_extends,
+            "unit": self.units,
+            "methodik": self.methodology
+        }}
+```
+
+### Toolbox
+
+Die Toolbox übernimmt Aufgaben die in vielen Klassen benötigt werden. Nachfolgend ist ihr Code abgebildet.
+
+```python
+class Toolbox:
+    def clean_string(self, string):
+        d = {"\\": "", "\n": "",'"':"","Kurzbeschreibung":"","  ":""}
+        for i, j in d.items():
+            string = string.replace(i, j)
+        return string.strip()
+
+    def json_validator(self,data):
+        try:
+            json.loads(data)
+            return True
+        except ValueError as error:
+            return False
+```
+
+|Methode | Definition |
+|--------|------------|
+| **clean_string** | Anhand eines übergebenen Strings wewrden nicht benötigte Charaktere aus diesem entfernt, dies kommt vor allem bei den langen Definitionen vor, welche von den Mapfiles nicht gelesen werden können |
+| **json_validator** | Prüft ob der übergebene String im JSON-Format ist, sonst wird False zurückgebenen. |
+
+### Color
+
+Die Klasse Color wird für den [**WMS-Service**](#ogc-factory) verwendet, um die Farbliche Klasseneinteilung der Mapfiles zu bewerkstelligen und um notwendige Umrechnungen durchzuführen.
+
+|Methode | Paramter| Rückgabe|Definition |
+|--------|------------|------|-----------|
+|**__init__**|String:min_color,String:max_color,int:classes| Konstruktor :wink: | |
+|**Berechnung**|String:Min-Color, String:Max-Color| Array | |
