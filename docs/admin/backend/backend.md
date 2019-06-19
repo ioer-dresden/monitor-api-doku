@@ -190,5 +190,9 @@ Die Klasse Color wird für den [**WMS-Service**](#ogc-factory) verwendet, um die
 
 |Methode | Paramter| Rückgabe|Definition |
 |--------|------------|------|-----------|
-|**__init__**|String:min_color,String:max_color,int:classes| Konstruktor :wink: | |
-|**Berechnung**|String:Min-Color, String:Max-Color| Array | |
+|**__init__**|String:min_color,String:max_color,int:classes| Konstruktor :wink: |Bei der instanziierung der _Color_-Klasse muss der Minimale- und MAximale Farbwert als **HEX-Code** angegeben werden. Desweiteren ist es wichtig die Anzahl der Klassen zu definieren, um den Aufbauenden Berechnungen mitzuteilen, welche Breite des farbliche Spektrum besitzen soll.|
+|private:**Berechnung**|String:Min-Color, String:Max-Color| Array | Diese Methode erstellt ausgehend von der Anzhal der Klassen ein Array, welches für die übergebenen Minimal- und Maximalwerte die dazwischenliegenden Farbcodes generiert. |
+|private:**HexToRGB**| String:Hex-Code | String:RGB-Code | Diese Methode berechnet für den übergebenen Hex-Code den RGB-Wert aus |
+|private:**RGBToHex**| String:RGB-Code | String:Hex-Code | Diese Methode berechnet für den übergebenen RGB-Code den HEX-Wert aus |
+|public:**buildColorPalette** | | Array | Diese Methode nutzt die privaten Methoden um die Finale Farbpallete zu erstellen. In dem Array wird dann für jede Klasse der entsprechende Farbwert als **HEX-Code** gespeichert |
+|public: **toString** | | String | Gibt die Klassen-Paramter als String zurück |
