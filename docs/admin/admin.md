@@ -10,4 +10,5 @@ permalink: /docs/admin
 
 ![Image]({{site.baseurl}}/assets/images/admin_dashboard.png)
 
-Zum jetzigen Zeitpunkt liegt die Funktionalität des Administrativen-Teils vor allem in Pflege der **OGC-Dienste**. Über ein Dashboard können diese aktualisiert werden. 
+Zum jetzigen Zeitpunkt liegt die Funktionalität des Administrativen-Teils vor allem in der Pflege der **OGC-Dienste**. Über ein Dashboard können diese aktualisiert werden. 
+In diesem Kapitel wird das Frontend und auch das Backend dokumentiert.

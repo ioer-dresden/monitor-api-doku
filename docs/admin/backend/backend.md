@@ -196,3 +196,50 @@ Die Klasse Color wird für den [**WMS-Service**](#ogc-factory) verwendet, um die
 |private:**RGBToHex**| String:RGB-Code | String:Hex-Code | Diese Methode berechnet für den übergebenen RGB-Code den HEX-Wert aus |
 |public:**buildColorPalette** | | Array | Diese Methode nutzt die privaten Methoden um die Finale Farbpallete zu erstellen. In dem Array wird dann für jede Klasse der entsprechende Farbwert als **HEX-Code** gespeichert |
 |public: **toString** | | String | Gibt die Klassen-Paramter als String zurück |
+
+## Routing {#routes}
+
+Das Route Mapping wurde für die administrativen Aufgaben implementiert. Um die Übersicht zu bewahren wurde wie auch schon für die anderen Aufgabend er API ein [**Blueprint**]({{site.baseurl}}/) angelegt, mit dem Kürzel _admin_, welches die URL erweitert. 
+Nachfolgend ist der Code abgebildet, welcher demonstriert welche Klassen bei der jeweiligen URL aufgerufen werden.
+Die Schnittstelle ist nur für angemeldete [**User**](https://monitor.ioer.de/monitor_api/login){:target="blank"} zu erreichen, was über die Expession _@login_required_ realisiert wurde.
+
+```python
+@admin.route('/')
+@login_required
+def admin_page():
+    return render_template("admin/index.html")
+
+@admin.route('/wfs',methods=['GET', 'POST'])
+@login_required
+def wfs_service():
+    wfs = OgcFactory('wfs')
+    return jsonify(wfs.create_service().createAllServices())
+
+@admin.route('/wcs',methods=['POST'])
+@login_required
+def wcs_service():
+    wcs = OgcFactory("wcs")
+    return jsonify(wcs.create_service().createAllServices())
+
+@admin.route('/wms',methods=['POST'])
+@login_required
+def wms_service():
+    wms = OgcFactory("wms")
+    return jsonify(wms.create_service().createAllServices())
+
+@admin.route('/geosn',methods=['POST'])
+@login_required
+def geosn_service():
+    geosn = GeoSN('/srv/www/htdocs/monitor_ogc_xml/')
+    return jsonify(geosn.update())
+```
+
+In der nachfolgenden Tabelle sind die URL-Endpoints und deren Aufgaben kurz zusammengefasst.
+
+|Endpoint|Beschreibung|
+|--------|------------|
+|/admin/ | beim Aufruf dieser URL wird das zugrundeliegende Template aus dem [**Static**]({{site.baseurl}}/docs/static) gerendert (admin/index.html).|
+|/admin/wfs | Hier wird der [**OGC-Factory**](#ogc-factory) als Service **wfs** mitgegeben, wodruch alle Web Feature Services des IÖR aktualisiert werden.|
+|/admin/wcs | Hier wird der [**OGC-Factory**](#ogc-factory) als Service **wcs** mitgegeben, wodruch alle Web Coverage Services des IÖR aktualisiert werden.|
+|/admin/wms | Hier wird der [**OGC-Factory**](#ogc-factory) als Service **wms** mitgegeben, wodruch alle Web Map Services des IÖR aktualisiert werden.|
+|/admin/geosn |Hier wird die Klasse [**GeoSN**](#geosn) aufgerufen, womit alle Dienste des IÖR im **GeoMIS** aktualisiert werden.|
