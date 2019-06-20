@@ -15,7 +15,6 @@ In der folgenden Tabelle sind diese zusammengefasst:
 |Name | Route | Zweck |
 |-----|-------|-------|
 |[Admin]({{site.baseurl}}/docs/admin)| **/admin** | Verwaltung des Monitors und der OGC-Services, nur für angemeldete Nutzer|
-|[SoRa]({{site.baseurl}}/sora)| **/sora** | Dienste für das Forschungsprojekt [SoRa](http://www.sora-projekt.de/){:target="_blank"}|
 |[User]({{site.baseurl}}/monitor-api-doku/user)| **/user** | Nutzerverwaltung für die Anmeldung an der API |
 
 Die anderen Module haben folgende Aufgaben:
