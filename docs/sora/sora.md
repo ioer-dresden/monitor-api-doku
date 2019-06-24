@@ -8,7 +8,7 @@ permalink: /docs/sora
 # [SoRa](http://www.sora-projekt.de/){:target="blank"} - Sozial-Raumwissenschaftliche Forschungsdateninfrastruktur
 
 Da es sich bei Sora um ein reines Backend handelt, wird auch nur dieses vorgestellt. 
-Das Backend hat vor allem die Aufgabe die im SoRa Projekt gestellten Anforderungen zu erfüllen indem **freie Nutzeranfragen auf topografischen Geobasisdaten beantwortet werden. Diese werden vom Clienten gestellt.
+Das Backend hat vor allem die Aufgabe die im SoRa Projekt gestellten Anforderungen zu erfüllen indem **freie Nutzeranfragen** auf topografischen Geobasisdaten beantwortet werden. Diese werden vom Clienten gestellt.
 
 # Inhalt
 
