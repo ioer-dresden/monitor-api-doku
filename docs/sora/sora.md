@@ -25,10 +25,12 @@ Auf dem [ESRI-Server](https://edn.ioer.de:6443/arcgis/manager/index.html){:targe
 
 ## **Flask** {#flask}
 
-
-
 ## Esri-Server {#edn}
 
 [Github](https://github.com/ioer-dresden/sora-services){:target="blank"}{: .btn .btn-purple }
 
-Um arcpy auf dem Server einzubinden, ist man auf einen **ESRI-Server** angewiesen. Alle Geo-Prozessing Services wurden in **OOP-Python** geschrieben und mit [**_ArcMap_**](http://desktop.arcgis.com/de/arcmap/){:target="blank"} getestet. Um einen Service zu veröffentlichen helfen
+Um arcpy auf dem Server einzubinden, ist man auf einen **ESRI-Server** angewiesen. Alle Geo-Prozessing Services wurden in **OOP-Python** geschrieben und mit [**_ArcMap_**](http://desktop.arcgis.com/de/arcmap/){:target="blank"} getestet. Die Veröffentlichung eines _Geo-Processing Services_ erfolgte nach der Offiziellen [Anleitung](https://enterprise.arcgis.com/de/server/latest/publish-services/windows/a-quick-tour-of-publishing-a-geoprocessing-service.htm){:target="blank"}. 
+
+### Abfrage von Indikatorwerten zu Koordinaten {#coordinates}
+
+Über die [**Rest-Schnittstelle**]()
