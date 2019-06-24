@@ -323,9 +323,78 @@ Das nochfolgende UML bildet die verwnedeten Klassen ab, welche nachfolgend genau
 
 ### routes.py
 
-Hier erfolgt des **Request-Mapping**, indem genau defineirt wird, was bei welchen **query** passiert. Es werden die übergebenen **Query-Strings** ausgelesen und an den **Request-Manager** weitergegeben.
-// ToDo RDF
-### Request-Manager
+Hier erfolgt des **Request-Mapping**, indem genau defineirt wird, was bei welchen **query** passiert. Im nachfolgenden Code-Block ist der Quellcode abgebildet.
+
+```python
+#RDF-Schnittstelle um sich die Indikatoren als .ttl auszugeben
+@sora.route("/indicator", methods=['GET', 'POST'])
+def get_indicators():
+    indicator = Indicator(json_url=url)
+    try:
+        res = indicator.g
+    except Exception as e:
+        return abort(500)
+    if len(res) == 0:
+        return abort(404)
+    else:
+        return Response(res.serialize(format="turtle"), mimetype="text/n3")
+
+#RDF-Schnittstelle um sich die Kategorien als .ttl auszugeben
+@sora.route("/category", methods=['GET', 'POST'])
+def get_categories():
+    category = Category(json_url=url)
+    try:
+        res = category.g
+    except Exception as e:
+        return abort(500)
+    if len(res) == 0:
+        return abort(404)
+    else:
+        return Response(res.serialize(format="turtle"), mimetype="text/n3")
+
+#Ausgabe der RDF-Ontologie des IÖR
+@sora.route("/ontology", methods=['GET', 'POST'])
+def get_ontology():
+    dir = os.getcwd()
+    graph = Graph().parse("{}/app/sora/data/ontology.ttl".format(dir), format="turtle")
+    response = Response(graph.serialize(format="turtle"), mimetype='text/n3')
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
+
+#Schnittstelle um die Esri-Geoprocessing Dienste zu nutzen
+@sora.route('/services', methods=['GET', 'POST'])
+def get():
+    job = request.args.get('job') or None
+    values = request.get_data() or None
+    job_id = request.args.get('job_id') or None
+    # test if JSON is valid
+    try:
+        # validate json
+        # set request and get response from esri server
+        request_handler = ESRIServerManager(job, values=values, job_id=job_id)
+        app.logger.debug("result: \n%s", str(request_handler.get_request()))
+        return request_handler.get_request()
+    except Exception as e:
+        if job == None:
+            return jsonify(error='no job query, API-Doku: https://ioer-dresden.github.io/monitor-api-doku/docs/sora')
+        else:
+            return InvalidUsage(e,status_code=410)
+
+# Error handling
+@sora.errorhandler(InvalidUsage)
+def handle_invalid_usage(error):
+    response = jsonify(error.to_dict())
+    response.status_code = error.status_code
+    return response
+```
+
+Da die Code Kommentare schon sehr genau wiedergeben was passiert, soll nicht einzeln beschrieben werden was die instanziierten Klassen tun, dies ist nachfolgende dokumentiert.
+
+### EsriServerManager
+
+Diese Klasse hat die Aufgabe anhand der übergebenen JobID den entsprechenden Service auf dem [**Esri-Server**](#edn) aufzurufen und das Ergebnis an den Clienten zu streamen.
+### Indikator
+### Category
 
 ## Esri-Server {#edn}
 
