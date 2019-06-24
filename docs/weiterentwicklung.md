@@ -23,4 +23,4 @@ Mit der Verwendung dieser API wäre es möglich, die Nutzerverwaltung auch für 
 
 Im Moment ist es nur möglich einen Update der Dienste anzubieten. Perspektivisch wäre es auch wichtig die API um die REST-[**CRUD**](https://de.wikipedia.org/wiki/CRUD){:target="blank"} Methoden zu erweitern und diese in der GUI anzubieten. 
 
-Ein weiterer Punkt wäre es, alle Aufgaben des [**IÖR-MOnitor-Backends**](https://ioer-dresden.github.io/monitor-doku/docs/backend){:target="blank"} auf den **Flask**-Microservice zu übertragen und viele kleine Dienste zu orchestrieren.
+Ein weiterer Punkt wäre es, alle Aufgaben des [**IÖR-Monitor-Backends**](https://ioer-dresden.github.io/monitor-doku/docs/backend){:target="blank"} auf den **Flask**-Microservice zu übertragen und viele kleine Dienste zu orchestrieren.
