@@ -29,12 +29,16 @@ Um dies zu verdeutlichen ist nachfolgend der Code abgebildet:
 class OgcFactory:
     def __init__(self,_service):
         self.service = _service.lower()
+        #localhost for testing
         if("localhost" in request.url or "127.0.0.1:5000" in request.url):
             app.logger.debug("OGC Service for localhost")
-            self.path ='G:\\mapsrv_daten\\detailviewer\\{}_mapfiles'.format(self.service)
+            #dummy path
+            self.path ='G:\\test\\'.format(self.service)
+        # server path
         else:
             app.logger.debug("OGC Service for monitor.ioer.de")
-            self.path = '/mapsrv_daten/detailviewer/{}_mapfiles'.format(self.service)
+            #dummy path
+            self.path = '/server/'.format(self.service)
 
     def create_service(self):
         if self.service =='wms':
