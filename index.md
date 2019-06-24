@@ -24,4 +24,6 @@ Die anderen Module haben folgende Aufgaben:
 | **static** | Implementierung auf der Clientenseite |
 |**templates** | html Dateien für die jeweilige Seite + Email **Vorlagen**|
 
-Das **Doplyoment** mit allen notwendigen Tools und Server-Pfaden ist in folgenden [**PDF**]({{site.baseurl}}/assets/data/deployment.pdf){:target="blank"} festgehalten.
+______
+
+Das **Deployment** mit allen notwendigen Tools und Server-Pfaden ist in folgenden [**PDF**]({{site.baseurl}}/assets/data/deployment.pdf){:target="blank"} festgehalten.
