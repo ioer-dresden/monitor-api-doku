@@ -425,7 +425,7 @@ Um arcpy auf dem Server einzubinden, ist man auf einen **ESRI-Server** angewiese
 
 ### Abfrage von Indikatorwerten zu Koordinaten {#coordinates}
 
-[**Rest-Interface**](https://edn.ioer.de/arcgis/rest/services/SORA/coordinates/GPServer){:target="blank"}{: .btn .btn-blue }
+[**Rest-API**](https://edn.ioer.de/arcgis/rest/services/SORA/coordinates/GPServer){:target="blank"}{: .btn .btn-blue }
 
 Mit diesem Service können für vorgegebene Koordinaten die jeweiligen Indikatorwerte abgefragt werden. Wird ein Bufferwert gesetzt, ermittelt der Service den Durchschnitt des Indikators innhalb des Buffer-Bereichs. Hierbei wird ein quadratische Buffer um jede Koordinate gesetzt, dessen Räumlicher Durchschnitt über den **Paramter** _buffer_ gesetzt werden kann ([siehe Paramter JSON](#json-paramter-coord)). Aus diesem _Buffer_ wird durch eine Umgebungsanalyse alle enthaltenen Pixelwerte ermittelt und deren Durchschnittliches Ergebnis an den Response für jede Koordinate angehangen. 
 Nachfolgend ist für den Service das **UML** abgebildet:
