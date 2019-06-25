@@ -388,7 +388,7 @@ def handle_invalid_usage(error):
     return response
 ```
 
-Da die Code Kommentare schon sehr genau wiedergeben was passiert, soll nicht einzeln beschrieben werden was die instanziierten Klassen tun, dies ist nachfolgende dokumentiert.
+Da die Code Kommentare schon sehr gut wiedergeben was funktionale Betsandteile sindb g, soll nicht einzeln beschrieben werden was die instanziierten Klassen tun, dies ist nachfolgende dokumentiert.
 
 ### EsriServerManager
 
