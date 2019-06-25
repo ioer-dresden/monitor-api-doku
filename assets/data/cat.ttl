@@ -1,0 +1,45 @@
+@prefix ns1: <https://monitor.ioer.de/monitor_api/sora/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://monitor.ioer.de/monitor_api/sora/category#B> rdfs:label "Bevölkerungsbezug"@de,
+        "Population"@en ;
+    ns1:hasCategoryId "B" .
+
+<https://monitor.ioer.de/monitor_api/sora/category#F> rdfs:label "Freiraum"@de,
+        "Open Space"@en ;
+    ns1:hasCategoryId "F" .
+
+<https://monitor.ioer.de/monitor_api/sora/category#G> rdfs:label "Gebäude"@de,
+        "Buildings"@en ;
+    ns1:hasCategoryId "G" .
+
+<https://monitor.ioer.de/monitor_api/sora/category#L> rdfs:label "Landschafts- und Naturschutz"@de,
+        "Landscape and nature protection"@en ;
+    ns1:hasCategoryId "L" .
+
+<https://monitor.ioer.de/monitor_api/sora/category#O> rdfs:label "Ökosystemleistungen"@de,
+        "Ecosystem services"@en ;
+    ns1:hasCategoryId "O" .
+
+<https://monitor.ioer.de/monitor_api/sora/category#R> rdfs:label "Risiko"@de,
+        "Risk"@en ;
+    ns1:hasCategoryId "R" .
+
+<https://monitor.ioer.de/monitor_api/sora/category#S> rdfs:label "Siedlung"@de,
+        "Settlement"@en ;
+    ns1:hasCategoryId "S" .
+
+<https://monitor.ioer.de/monitor_api/sora/category#U> rdfs:label "Landschaftsqualität"@de,
+        "Landscape quality"@en ;
+    ns1:hasCategoryId "U" .
+
+<https://monitor.ioer.de/monitor_api/sora/category#V> rdfs:label "Verkehr"@de,
+        "Transportation"@en ;
+    ns1:hasCategoryId "V" .
+
+<https://monitor.ioer.de/monitor_api/sora/category#X> rdfs:label "Relief"@de,
+        "Relief"@en ;
+    ns1:hasCategoryId "X" .

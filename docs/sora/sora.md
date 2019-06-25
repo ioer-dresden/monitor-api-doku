@@ -16,8 +16,12 @@ Das Backend hat vor allem die Aufgabe die im SoRa Projekt gestellten Anforderung
     - [Abfrage von Indikatorwerten zu Koordinaten](#service-coord)
     - [Routing zum nächstgelegenen POI](#service-routing)
     - [Routing zwischen zwei Koordinaten](#service-poi)
+- [**RDF**](#rdf)
+    - [Indicators](#ind)
+    - [Category](#cat)
 - [**Flask** (monitor.ioer.de)](#flask)
 - [**Esri-Server** (edn.ioer.de)](#edn)
+    - [Abfrage von Indikatorwerten zu Koordinaten](#coordinates)
 
 ## Architektur
 
@@ -311,6 +315,23 @@ Die Ergebnis-JSON beinhaltet die Koordinaten der nächstgelegenen Grünfläche u
 2. **GET** des Ergebnisses:
    - Wie im Service _coodinates_, nur jetzt als job **routing_xy** angegeben
 
+## RDF {#rdf}
+
+_Das Resource Description Framework (RDF, engl. sinngemäß „System zur Beschreibung von Ressourcen“) bezeichnet eine technische Herangehensweise im Internet zur Formulierung logischer Aussagen über beliebige Dinge (Ressourcen). Ursprünglich wurde RDF vom World Wide Web Consortium (W3C) als Standard zur Beschreibung von Metadaten konzipiert. Mittlerweile gilt RDF als ein grundlegender Baustein des Semantischen Webs. RDF ähnelt den klassischen Methoden zur Modellierung von Konzepten wie UML-Klassendiagramme und Entity-Relationship-Modell. Im RDF-Modell besteht jede Aussage aus den drei Einheiten Subjekt, Prädikat und Objekt, wobei eine Ressource als Subjekt mit einer anderen Ressource oder einem Wert (Literal) als Objekt näher beschrieben wird._ [Quelle](https://de.wikipedia.org/wiki/Resource_Description_Framework){:target="blank"}
+
+Mit der Beschreibung der Indikatoren und deren Kategorien in **RDF**, wurde der Beschluss innerhlab der SoRa Projektmitglieder umgesetzt, eine Beschreibung der Metadaten in RDF durchzuführen. Zur Arbeit mit diesem Format wurde die _Python_-Bibliothek [_rdflib_](https://github.com/RDFLib/rdflib){:target="blank"} eingesetzt.
+### Indikator {#ind}
+
+[RDF-Abfrage]({{site.baseurl}}/assets/data/ind.ttl){:target="blank"}{: .btn .btn-purple }
+[Code](https://github.com/ioer-dresden/monitor-api/blob/master/app/sora/model/Indicator.py){: .btn .btn-green }{:target="blank"}
+
+Diese Klasse fragt bei der Instaziierung vom [**Monitor-Backend**](https://ioer-dresden.github.io/monitor-doku/docs/backend){:target="blank"} alle verfügbaren Indikatoren ab, welche im **Raster**-Format vorliegen. Iterativ werden diese Indikatoren und deren Metadaten dem Graphen hinzugefügt. 
+### Category {#cat}
+
+[RDF-Abfrage]({{site.baseurl}}/assets/data/cat.ttl){:target="blank"}{: .btn .btn-purple }
+[Code](https://github.com/ioer-dresden/monitor-api/blob/master/app/sora/model/Category.py){: .btn .btn-green }{:target="blank"}
+
+Ähnlich wie die Indikatoren fragt diese Klasse bei der Instaziierung vom [**Monitor-Backend**](https://ioer-dresden.github.io/monitor-doku/docs/backend){:target="blank"} alle verfügbaren Kategorien ab, welche für das **Raster**-Format vorliegen. Iterativ werden diese Kategorien und deren Metadaten dem Graphen hinzugefügt. 
 
 ## **Flask** {#flask}
 
@@ -392,9 +413,9 @@ Da die Code Kommentare schon sehr gut wiedergeben was funktionale Betsandteile s
 
 ### EsriServerManager
 
-Diese Klasse hat die Aufgabe anhand der übergebenen JobID den entsprechenden Service auf dem [**Esri-Server**](#edn) aufzurufen und das Ergebnis an den Clienten zu streamen.
-### Indikator
-### Category
+[Code](https://github.com/ioer-dresden/monitor-api/blob/master/app/sora/ESRIServerManager.py){: .btn .btn-green }{:target="blank"}
+
+Diese Klasse hat die Aufgabe anhand der übergebenen _Job-ID_ den entsprechenden Service auf dem [**Esri-Server**](#edn) aufzurufen und das Ergebnis an den Clienten zu streamen. Treten dabei Fehler (Exceptions) auf oder ist die Anfrage durch den Clienten falsch formuliert, wird eine entsprechende Meldung als Response gesendet. Somit ist es dem Clienten möglich darauf zu reagieren.
 
 ## Esri-Server {#edn}
 
@@ -404,10 +425,12 @@ Um arcpy auf dem Server einzubinden, ist man auf einen **ESRI-Server** angewiese
 
 ### Abfrage von Indikatorwerten zu Koordinaten {#coordinates}
 
+[**Rest-Interface**](https://edn.ioer.de/arcgis/rest/services/SORA/coordinates/GPServer){:target="blank"}{: .btn .btn-blue }
+
 Mit diesem Service können für vorgegebene Koordinaten die jeweiligen Indikatorwerte abgefragt werden. Wird ein Bufferwert gesetzt, ermittelt der Service den Durchschnitt des Indikators innhalb des Buffer-Bereichs. Hierbei wird ein quadratische Buffer um jede Koordinate gesetzt, dessen Räumlicher Durchschnitt über den **Paramter** _buffer_ gesetzt werden kann ([siehe Paramter JSON](#json-paramter-coord)). Aus diesem _Buffer_ wird durch eine Umgebungsanalyse alle enthaltenen Pixelwerte ermittelt und deren Durchschnittliches Ergebnis an den Response für jede Koordinate angehangen. 
 Nachfolgend ist für den Service das **UML** abgebildet:
 
 <iframe src="{{site.baseurl}}/assets/html/sora-coordinates.html" frameborder="0" allowfullscreen onload="this.width=screen.width*0.5;this.height=screen.height*0.55;"></iframe>
 
-Über die **REST**-Schnittstelle [_https://monitor.ioer.de/monitor_api/sora/services_](https://monitor.ioer.de/monitor_api/sora/services){:target="blank"} wird der Dienst angesprochen.
+
 
