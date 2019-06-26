@@ -432,5 +432,36 @@ Nachfolgend ist für den Service das **UML** abgebildet:
 
 <iframe src="{{site.baseurl}}/assets/html/sora-coordinates.html" frameborder="0" allowfullscreen onload="this.width=screen.width*0.5;this.height=screen.height*0.55;"></iframe>
 
+Anhand der Main-Methode wird ersichtlich, wie die vom _TaskRepository_ aufgerufenen Methoden als _Workflow_ dienen um das angefrgte Ergebnis zu generieren.
 
+```python
+def main():
+    # ENV Settings
+    arcpy.env.overwriteOutput = 1
+    # how to round the values
+    round = 2
+    # the keys
+    indicators = "indicators"
+    indicator_id = "id"
+    year_id = "year"
+    buffer_id = "buffer"
+    # user input
+    input = json.loads(arcpy.GetParameterAsText(0))
+    task = Result(input,round)
+    for i in input[indicators]:
+        # settings
+        indicator = i[indicator_id]
+        year = i[year_id]
+        if i.has_key("buffer"):
+            buffer = int(i[buffer_id])
+        else:
+            buffer = None
+        # create the result
+        task.getImagePath(indicator, year)
+        task.extractInput()
+        task.createPixelValues(buffer=buffer)
+
+
+    arcpy.SetParameterAsText(1,json.dumps(task.extractJSON()))
+```
 
