@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+    <title>Frontend - IÖR-Monitor API Dokumentation</title>
+
+    
+  
+
+  <link rel="shortcut icon" href="http://localhost:4000/monitor-api-doku/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="http://localhost:4000/monitor-api-doku/assets/css/just-the-docs.css">
+
+  
+
+  
+    <script type="text/javascript" src="http://localhost:4000/monitor-api-doku/assets/js/vendor/lunr.min.js"></script>
+  
+  <script type="text/javascript" src="http://localhost:4000/monitor-api-doku/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Frontend | IÖR-Monitor API Dokumentation</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Frontend" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung" />
+<meta property="og:description" content="Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung" />
+<link rel="canonical" href="http://localhost:4000/monitor-api-doku/docs/admin/frontend/frontend.html" />
+<meta property="og:url" content="http://localhost:4000/monitor-api-doku/docs/admin/frontend/frontend.html" />
+<meta property="og:site_name" content="IÖR-Monitor API Dokumentation" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/monitor-api-doku/docs/admin/frontend/frontend.html","description":"Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung","headline":"Frontend","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+  <div class="page-wrap">
+    <div class="side-bar">
+      <a href="http://localhost:4000/monitor-api-doku" class="site-title fs-6 lh-tight">IÖR-Monitor API Dokumentation</a>
+      <span class="fs-3"><button class="js-main-nav-trigger navigation-list-toggle btn btn-outline" type="button" data-text-toggle="Hide">Menu</button></span>
+      <div class="navigation main-nav js-main-nav">
+        <nav role="navigation" aria-label="Main navigation">
+  <ul class="navigation-list">
+    
+    
+      
+        
+          <li class="navigation-list-item active">
+            
+            <a href="http://localhost:4000/monitor-api-doku/404.html" class="navigation-list-link"></a>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/" class="navigation-list-link">Home</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/sora" class="navigation-list-link">Sora</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item active">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/admin" class="navigation-list-link">Admin</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                    <li class="navigation-list-item  active">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/admin/frontend/frontend.html" class="navigation-list-link active">Frontend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/admin/backend/backend.html" class="navigation-list-link">Backend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/user" class="navigation-list-link">User</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/user/backend/backend.html" class="navigation-list-link">Backend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/user/database/database.html" class="navigation-list-link">Datenbank</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/user/frontend/frontend.html" class="navigation-list-link">Frontend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/weiterentwicklung.html" class="navigation-list-link">Weiterentwicklung</a>
+            
+          </li>
+        
+      
+    
+  </ul>
+</nav>
+
+      </div>
+      <footer role="contentinfo" class="site-footer">
+        <p class="text-small text-grey-dk-000 mb-0">This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</p>
+      </footer>
+    </div>
+    <div class="main-content-wrap js-main-content" tabindex="0">
+      <div class="page-header">
+        <div class="main-content">
+          
+          <div class="search js-search">
+            <div class="search-input-wrap">
+              <input type="text" class="js-search-input search-input" tabindex="0" placeholder="Search IÖR-Monitor API Dokumentation" aria-label="Search IÖR-Monitor API Dokumentation" autocomplete="off">
+              <svg width="14" height="14" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" class="search-icon"><title>Search</title><g fill-rule="nonzero"><path d="M17.332 20.735c-5.537 0-10-4.6-10-10.247 0-5.646 4.463-10.247 10-10.247 5.536 0 10 4.601 10 10.247s-4.464 10.247-10 10.247zm0-4c3.3 0 6-2.783 6-6.247 0-3.463-2.7-6.247-6-6.247s-6 2.784-6 6.247c0 3.464 2.7 6.247 6 6.247z"/><path d="M11.672 13.791L.192 25.271 3.02 28.1 14.5 16.62z"/></g></svg>
+            </div>
+            <div class="js-search-results search-results-wrap"></div>
+          </div>
+          
+          
+            <ul class="list-style-none text-small mt-md-1 mb-md-1 pb-4 pb-md-0 js-aux-nav aux-nav">
+              
+                <li class="d-inline-block my-0"><a href="https://github.com/ioer-dresden">IÖR auf GitHub</a></li>
+              
+            </ul>
+          
+        </div>
+      </div>
+      <div class="main-content">
+        
+          
+            <nav class="breadcrumb-nav">
+              <ol class="breadcrumb-nav-list">
+                
+                  <li class="breadcrumb-nav-list-item"><a href="http://localhost:4000/monitor-api-doku/docs/admin">Admin</a></li>
+                
+                <li class="breadcrumb-nav-list-item"><span>Frontend</span></li>
+              </ol>
+            </nav>
+          
+        
+        <div id="main-content" class="page-content" role="main">
+          <h1 id="frontend">Frontend</h1>
+<p>Das Frontend wurde mit der JavaScript-Bibliothek <a href="https://reactjs.org/" target="blank"><strong>React</strong></a> verwirklicht. Es besteht hauptsächlich aus 3 Modulen, welche in diesem Kapitel vorgestellt werden. Zur Kommunikation mit dem <a href="/monitor-api-doku/docs/admin/backend/backend.html"><strong>Backend</strong></a> wurde ein <a href="#rqm"><strong>Request Manager</strong></a> implementiert, welcher <a href="https://github.com/axios/axios" target="blank"><strong>Axios</strong></a> einsetzt.
+Alle vorgestellten Klassen erben von der Abstrakten Klasse <a href="https://reactjs.org/docs/react-component.html" target="blank"><strong>React.Component</strong></a>, bis auf den Request Manager.</p>
+
+<p><span class="fs-5">
+<a href="/monitor-api-doku/assets/images/admin_dashboard_signed.png" target="_blank" class="btn">Screenshot</a>
+</span></p>
+
+<h1 id="inhalt">Inhalt</h1>
+
+<ul>
+  <li><a href="#seidnav"><strong>Seiten-Menü</strong></a></li>
+  <li><a href="#ogc"><strong>OGC-Dienste</strong></a>
+    <ul>
+      <li><a href="#ogc-update"><strong>Update der Dienste</strong></a></li>
+    </ul>
+  </li>
+  <li><a href="#navbar"><strong>Navigations-Menü</strong></a></li>
+  <li><a href="#rqm"><strong>Request Manager</strong></a></li>
+  <li><a href="#modal"><strong>ModalDialog</strong></a></li>
+</ul>
+
+<h2 id="react-module">React-Module</h2>
+<h3 id="seidenav">Seitenmenü</h3>
+<p>Das Seitenmenü hat die Hauptaufgabe die Funktionalitäten zum hin- und herschalten zwischen den einzelnen Funktionen zu ermöglichen und bei einem <em>OnClick</em>-Event ein neues Modul <a href="#ogc"><strong><em>OGC</em></strong></a> zu erstellen. Hierfür wird in dem <strong><em>Data</em></strong>-Parameter der entsprechende Schlüssel abgefragt und übergeben.
+In der nachfolgenden Tabelle sind die Parameter für die Erstellung aufgelistet:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Funktion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>wms</td>
+      <td><strong><em>Web Map Service</em></strong> Modul</td>
+    </tr>
+    <tr>
+      <td>wfs</td>
+      <td><strong><em>Web Feature Sservice</em></strong> Modul</td>
+    </tr>
+    <tr>
+      <td>wcs</td>
+      <td><strong><em>Web Coverage Service</em></strong> Modul</td>
+    </tr>
+    <tr>
+      <td>geosn</td>
+      <td><strong><em>GeoMIS</em></strong> Modul</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Das Schlüsselwort wird als <em>React</em>-Property an das <strong>OGC-Modul</strong> übergeben.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">ogc</span> <span class="o">=</span>  <span class="o">&lt;</span> <span class="nx">OGC</span> <span class="nx">service</span><span class="o">=</span><span class="p">{</span><span class="nx">service</span><span class="p">}</span><span class="sr">/&gt;</span><span class="err">;
+</span>            <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+            <span class="nx">ogc</span><span class="p">,</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'page_content'</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h3 id="ogc">OGC-Dienste</h3>
+
+<p>Über dieses Modul können die einzelnen Funktionalitäten ausgewählt werden, mit welchen der jeweils gewählte Service manipuliert werden kann. Im Moment sind alle dafür notwendige Funktionen:</p>
+<ul>
+  <li><strong>Update der Dienste</strong></li>
+  <li><strong>Neuen Dienst erstellen</strong></li>
+  <li><strong>Dienst löschen</strong></li>
+  <li><strong>Übersicht</strong></li>
+</ul>
+
+<p>vorhanden, jedoch ist nur der <strong>Upate der Dienste</strong> implementiert, die anderen Funktionen dienen als Platzhalter.</p>
+
+<h4 id="ogc-update">Update der Dienste</h4>
+
+<p>Die Funktion hat die Aufgabe über den <a href="#rqm"><strong>Request-Manager</strong></a> den Update Prozess auf dem Backend anzustoßen. War dies erfolgreich gibt das <em>Backend</em> die <strong><em>Ergebnis</em></strong>-JSON zurück. Diese wird zum besseren Verständnis mit dem <a href="#modal"><strong>Modal-Dialog</strong></a> als <strong>Bootstrap</strong>-Card View dargestellt. Aus der JSON-Datei können dabei die Informationen entnommen werden, welche verwendet werden um den Status der Erstellung zu visualisieren.
+ In der folgenden Abbildung ist ein Dialogfenster für den <strong><em>GeoDN</em></strong> Service abgebildet und zeigt dabei auch eine fehlgeschlagene Erstellung eines Diesntes, welcher rot <strong>hinterlegt</strong> wurde.</p>
+
+<p><img src="/monitor-api-doku/assets/images/geosn_dialog.jpeg" alt="Geosn" /></p>
+
+<h3 id="rqm">Request Manager</h3>
+
+<p>Diese Klasse übernimmt die Kommunikation mit dem <strong>Backend</strong> und weißt dieses an, die Aktualisierung der Dienste anzustoßen. Dafür wurde die Methode <em>updateOGCService()</em> implementiert, welcher als Parameter der zu erstellende Dienst (wms,wcs,wfs,geosn) übergeben wird. Als <strong>Ajax</strong>-Bibliothek wurde <a href="https://github.com/axios/axios" target="blank"><strong>Axios</strong></a> eingesetzt. Nachfolgend ist der Code abgebildet.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">class</span> <span class="nx">RequestManager</span><span class="p">{</span>
+    <span class="kr">static</span> <span class="nx">updateOGCService</span><span class="p">(</span><span class="nx">_service</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">"create services for: "</span><span class="p">,</span><span class="nx">_service</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">'https://monitor.ioer.de/monitor_api/admin/'</span><span class="o">+</span><span class="nx">_service</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="modal">Modal Dialog</h3>
+
+<p>Diese Klasse blendet einen sogenannten Dialog ein, dessen Style von <strong>Bootstrap</strong> <a href="https://getbootstrap.com/docs/4.0/components/modal/" target="blank"><strong>Modal</strong></a> definiert wird. Über den Konstruktor wird dieser <em>React-Komponente</em> das HTML übergeben, welches innerhalb des Dialoges dargestellt (gerendert) werden soll.</p>
+
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

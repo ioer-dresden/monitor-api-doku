@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+    <title>Backend - IÖR-Monitor API Dokumentation</title>
+
+    
+  
+
+  <link rel="shortcut icon" href="http://localhost:4000/monitor-api-doku/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="http://localhost:4000/monitor-api-doku/assets/css/just-the-docs.css">
+
+  
+
+  
+    <script type="text/javascript" src="http://localhost:4000/monitor-api-doku/assets/js/vendor/lunr.min.js"></script>
+  
+  <script type="text/javascript" src="http://localhost:4000/monitor-api-doku/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Backend | IÖR-Monitor API Dokumentation</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Backend" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung" />
+<meta property="og:description" content="Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung" />
+<link rel="canonical" href="http://localhost:4000/monitor-api-doku/docs/user/backend/backend.html" />
+<meta property="og:url" content="http://localhost:4000/monitor-api-doku/docs/user/backend/backend.html" />
+<meta property="og:site_name" content="IÖR-Monitor API Dokumentation" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/monitor-api-doku/docs/user/backend/backend.html","description":"Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung","headline":"Backend","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+  <div class="page-wrap">
+    <div class="side-bar">
+      <a href="http://localhost:4000/monitor-api-doku" class="site-title fs-6 lh-tight">IÖR-Monitor API Dokumentation</a>
+      <span class="fs-3"><button class="js-main-nav-trigger navigation-list-toggle btn btn-outline" type="button" data-text-toggle="Hide">Menu</button></span>
+      <div class="navigation main-nav js-main-nav">
+        <nav role="navigation" aria-label="Main navigation">
+  <ul class="navigation-list">
+    
+    
+      
+        
+          <li class="navigation-list-item active">
+            
+            <a href="http://localhost:4000/monitor-api-doku/404.html" class="navigation-list-link"></a>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/" class="navigation-list-link">Home</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/sora" class="navigation-list-link">Sora</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/admin" class="navigation-list-link">Admin</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/admin/frontend/frontend.html" class="navigation-list-link">Frontend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/admin/backend/backend.html" class="navigation-list-link">Backend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item active">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/user" class="navigation-list-link">User</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item  active">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/user/backend/backend.html" class="navigation-list-link active">Backend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/user/database/database.html" class="navigation-list-link">Datenbank</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/user/frontend/frontend.html" class="navigation-list-link">Frontend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/weiterentwicklung.html" class="navigation-list-link">Weiterentwicklung</a>
+            
+          </li>
+        
+      
+    
+  </ul>
+</nav>
+
+      </div>
+      <footer role="contentinfo" class="site-footer">
+        <p class="text-small text-grey-dk-000 mb-0">This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</p>
+      </footer>
+    </div>
+    <div class="main-content-wrap js-main-content" tabindex="0">
+      <div class="page-header">
+        <div class="main-content">
+          
+          <div class="search js-search">
+            <div class="search-input-wrap">
+              <input type="text" class="js-search-input search-input" tabindex="0" placeholder="Search IÖR-Monitor API Dokumentation" aria-label="Search IÖR-Monitor API Dokumentation" autocomplete="off">
+              <svg width="14" height="14" viewbox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" class="search-icon"><title>Search</title>
+<g fill-rule="nonzero"><path d="M17.332 20.735c-5.537 0-10-4.6-10-10.247 0-5.646 4.463-10.247 10-10.247 5.536 0 10 4.601 10 10.247s-4.464 10.247-10 10.247zm0-4c3.3 0 6-2.783 6-6.247 0-3.463-2.7-6.247-6-6.247s-6 2.784-6 6.247c0 3.464 2.7 6.247 6 6.247z"></path><path d="M11.672 13.791L.192 25.271 3.02 28.1 14.5 16.62z"></path></g></svg>
+            </div>
+            <div class="js-search-results search-results-wrap"></div>
+          </div>
+          
+          
+            <ul class="list-style-none text-small mt-md-1 mb-md-1 pb-4 pb-md-0 js-aux-nav aux-nav">
+              
+                <li class="d-inline-block my-0"><a href="https://github.com/ioer-dresden">IÖR auf GitHub</a></li>
+              
+            </ul>
+          
+        </div>
+      </div>
+      <div class="main-content">
+        
+          
+            <nav class="breadcrumb-nav">
+              <ol class="breadcrumb-nav-list">
+                
+                  <li class="breadcrumb-nav-list-item"><a href="http://localhost:4000/monitor-api-doku/docs/user">User</a></li>
+                
+                <li class="breadcrumb-nav-list-item"><span>Backend</span></li>
+              </ol>
+            </nav>
+          
+        
+        <div id="main-content" class="page-content" role="main">
+          <h2 id="inhalt">Inhalt</h2>
+<ul>
+  <li>
+<a href="#routes">routes.py</a>
+    <ul>
+      <li><a href="#main">route<strong>(/user)</strong></a></li>
+      <li><a href="#login">route<strong>(/login)</strong></a></li>
+      <li><a href="#signup">route<strong>(/signup)</strong></a></li>
+      <li><a href="#mail_confirm">route <strong>(/confirm/token)</strong></a></li>
+      <li><a href="#services">route <strong>(/services)</strong></a></li>
+      <li><a href="#reset">route <strong>(/reset)</strong></a></li>
+      <li><a href="#reset-token">route <strong>(/reset/token)</strong></a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#models">Models</a>
+    <ul>
+      <li><a href="#mailer">Mailer</a></li>
+      <li><a href="#user">User</a></li>
+      <li><a href="#token">Token</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#security">Sicherheit</a>
+    <ul>
+      <li><a href="#url-manipulation">URL-Manipulierung</a></li>
+      <li>
+<a href="#sql-injection">SQL-Injektion</a>
+        <h2 id="routes">routes.py</h2>
+        <p><em>Flask selbst ist kaum mehr als ein Bindeglied, das die WSGI-Schicht und die Template-Bibliothek zusammenhält. Insbesondere kümmert es sich um das sogenannte Routing, das URLs auf Funktionen abbildet.</em> (<a href="https://www.admin-magazin.de/Das-Heft/2013/01/Webanwendungen-mit-Flask" target="_blank">admin-magazin</a>)</p>
+        <h3 id="main">route<strong>(/)</strong>
+</h3>
+        <p>Dies ist die sogenannte <strong>Main</strong>-Route, hier wird lediglich aus dem Dateiorder <strong>user</strong> innerhalb des <strong><a href="/monitor-api-doku/docs/static">static</a></strong>-Verzeichnisses die <em>index.html</em> gerendert.</p>
+        <h3 id="routeuser">route<strong>(/user)</strong>
+</h3>
+        <p>Mit der Funktion <em>get_service()</em> werden dem Nutzer die OGC-Dienste über die <strong>API</strong> bereitgestellt. Über einen <em>GET</em> request müssen die <strong>URL-Parameter</strong> an den Endpoint gesendet werden. Durch den vorgeschalteteten Service wird der direkte Zugriff auf den <strong>MapServer</strong> blockiert und nur angemeldete Nutzer können die OGC-Dienste nutzen.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Ein Beispiel für einen OGC-Zugriff wäre folgende Parametrisierung der URL:</p>
+<ul>
+  <li>https://monitor.ioer.de/monitor_api</li>
+  <li><strong>/user?</strong></li>
+  <li>
+<strong>id</strong>=_F13RG<strong>&amp;</strong> : Indikator ID</li>
+  <li>
+<strong>key</strong>=<em>5HbHOLs7eKQmHJ8r5og2P91qr9tAviBO</em><strong>&amp;</strong> : Generierter API-Key des Nutzers, welcher über die Website erstellt wurde</li>
+  <li>
+<strong>service</strong>=<em>wcs</em> : Gibt an, welcher OGC-Service genutzt werden soll (wfs,wcs, wms)</li>
+</ul>
+
+<p>Alle URl und Indikatoren lassen sich auch direkt über die Tabellenansicht im <strong><a href="/monitor-api-doku/docs/user/frontend/frontend.html">Userbereich</a></strong> anzeigen.</p>
+
+<p>Im folgenden Diagramm ist die Funktionsweise des Streaming-Dienstes dokumentiert.
+<img src="/monitor-api-doku/assets/images/get_service.png" alt="getService"></p>
+
+<p>Im ersten Schritt werden aus der URL die entsprechenden Parameter herausgefiltert. Dann wird geprüft ob der API-Key korrekt ist, indem die in der Datenbank hinterlegten- mit den angefragten Werten verglichen werden. Ist der API-Key fehlerhaft, wird eine entsprechende Fehlermeldung an den Clienten zurück geschickt. Ist der Key korrekt wird die Anfrage an den <a href="https://mapserver.org/">MapServer</a> für den entsprechenden Service gestellt und der Response an den Clienten gestreamt.</p>
+<h3 id="login">route<strong>(/login)</strong>
+</h3>
+
+<p><a href="https://monitor.ioer.de/monitor_api/login" class="btn" target="_blank">Login</a></p>
+
+<p>Diese Methode baut auf die Flask-Bibliothek <strong><a href="https://flask-login.readthedocs.io/en/latest/">Flask-Login</a></strong> auf und behandelt das einloggen des Nutzers über das entsprechende Formular. 
+Innerhalb der Methode werden dabei nacheinander folgende Bedingungen überprüft:</p>
+<ol>
+  <li>Stimmen Username und Passwort überein</li>
+  <li>Welche Rechte hat der Nutzer → <strong>1</strong> für User und <strong>2</strong> für Admin, welche in der <strong><a href="/monitor-api-doku/docs/user/database/database.html">Datenbank</a></strong> unter der Tabelle <em>users</em> in der Spalte _access: abgelegt.</li>
+</ol>
+
+<p><img src="/monitor-api-doku/assets/images/login.png" alt="getService"></p>
+<h3 id="signup">route <strong>(/signup)</strong>
+</h3>
+
+<p><a href="https://monitor.ioer.de/monitor_api/signup" class="btn" target="_blank">Registrierung</a></p>
+
+<p>Diese Methode hat die Aufgabe die von Nutzer eingetragenen und an den HTTP-Endpoint geschickten Daten in der <strong><a href="/monitor-api-doku/docs/user/database/database.html">Datenbank</a></strong> zu speichern. Eine weitere Aufgabe besteht darin zu prüfen, ob der Nutzername oder die Mailadresse bereits in der Datenbank vorhanden ist, in diesem Fall wird eine entsprechende Fehlermeldung an den Clienten zurückgegeben.
+Stimmen alle Felder überein wird eine neue Instanz der Klasse-<a href="#user">User</a> erzeugt und diese in der Datenbank abgelegt. Für das Speichern in der <strong>DB</strong> wird die Bibliothek <strong><a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/" target="_blank"> Flask-SQLAlchemy</a></strong> verwendet.</p>
+
+<p>Ein Beispiel für das programmatische Anlegen eines neuen Nutzers ist im folgenden Beispiel aufgeführt:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">hashed_password</span><span class="p">,</span> <span class="n">lastname</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">lastname</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+                <span class="n">firstname</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">firstname</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">facility</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">facility</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">access</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">business</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">business</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">confirmed</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_user</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Wurde der Nutzer angelegt, wird eine Mail an seine angegebene Adresse geschickt, um den Account zu verifizieren. Diese Aufgabe wird von der <strong>Route</strong> <em><a href="#mail_confirm">Mail-Confirm</a></em> übernommen.</p>
+
+<p>Für den Clienten wird das <em>Template</em> <strong>signup.html</strong> aus dem <strong><a href="/monitor-api-doku/docs/static">static</a></strong>-Verzeichnis gerendert, über dieses erfolgt die Eingabe. Fehler werden durch <strong><a href="">Flask-Markup</a></strong> in das template eingefügt.</p>
+
+<h3 id="mail_confirm">route <strong>(/confirm/token)</strong>
+</h3>
+<p>Diese <strong>Route</strong> ruft die Methode <em>confirm_email(token_pass)</em> auf, ihr muss der generierte <a href="#token">Token</a> übergeben werden. Hierbei wird die Email-Adresse anhand des generierten Tokens überprüft. Der Nutzer bekommt nach seiner Anmeldung eine Mail mit dem Registrierungslink, beim anklicken wird er an diesen Enpoint geleitet.
+Ist der Token korrekt wird in der <strong><a href="/monitor-api-doku/docs/user/database/database.html">Datenbank</a></strong> in der Tabelle <em>users</em> die Spalte <em>confirmed</em> auf <strong>True</strong> gesetzt. 
+Am Schluss wird der User ausgeloggt, um sich anzumelden.</p>
+
+<p>Bei einem Fehler wird die entsprechende Fehlermeldung angezeigt.</p>
+
+<p>Für den Clienten wird das <em>Template</em> <strong>confirmed_mail.html</strong> aus dem <strong><a href="/monitor-api-doku/docs/static">static</a></strong>-Verzeichnis gerendert.</p>
+
+<h3 id="services">route <strong>(/services)</strong>
+</h3>
+<p>Diese <strong>Route</strong> hat die Aufgabe aus dem <strong><a href="/monitor-api-doku/docs/static">static</a></strong>-Verzeichnis dem Clienten alle Services aufzulisten. Hierfür wird die <em>service.html</em> gerendert. Die Funktion prüft dabei ob der Nutzer angemeldet ist, um auch nur berechtigte Zugriffe zuzulassen. Ist der Nutzer nicht angemeldet, wird die <em>login.html</em> gerendert.</p>
+
+<h3 id="reset">route <strong>(/reset)</strong>
+</h3>
+
+<p><a href="https://monitor.ioer.de/monitor_api/reset" class="btn" target="_blank">Passwort zurücksetzen</a></p>
+
+<p><img src="/monitor-api-doku/assets/images/reset.png" alt="uml"></p>
+
+<p>Diese <strong>Route</strong> hat die Aufgabe das zurücksetzen des Passwortes zu steuern. Hat der Nutzer seine Emailadresse eingegeben, wird überprüft ob dieses in der Datenbank hinterlegt ist.  Trifft dies zu wird ein Token generiert und mit der Hilfe der <a href="#mailer"><strong>Mailer</strong></a>-Klasse das Passwort an die angegebene Mailadresse geschickt. der generierte Token wird dabei mit der Hilfe der <a href="#token"><strong>Token</strong></a>-Klasse erstellt und wird aus der Mailadresse generiert.</p>
+
+<h3 id="reset-token">route <strong>(/reset/token)</strong>
+</h3>
+
+<p>Diese Route wird aufgerufen, wenn der Nutzer seine Mail zum zurücksetzen des Passwortes bekommen hat und den darin enthaltenen Link klickt.</p>
+
+<p>Ein Beispiel Link wäre folgender:</p>
+<pre><code class="language-url">https://monitor.ioer.de/monitor_api/reset/ImwubXVjaGFAaW9lci5kZSI.D6xN-w.Ik_GXgQuTDrleuX_Skg_YHr9K5Y
+</code></pre>
+
+<p>Im ersten Schritt wird der übergebene Token überprüft, ist er korrekt kann das Passwort geändert werden. Ist der Token <strong>nicht korrekt</strong> oder <strong>ausgelaufen</strong> (siehe <a href="#token"><strong>Token</strong></a>)</p>
+
+<p>Durch das gerenderte HTML-Dokument <em>reset_passwort.html</em> aus dem  <strong><a href="/monitor-api-doku/docs/static">static</a></strong> bekommt der Nutzer die Möglichkeit ein neues Passwort anzugeben.</p>
+
+<h2 id="models">Models</h2>
+
+<h3 id="mailer">Mailer</h3>
+<p>Diese Klasse übernimmt im User-Service die Aufgabe alle notwendigen Mails zu verschicken, über die Methode <strong><em>send_mail</em></strong> wird ein neues <strong>Mail</strong>-Objekt instanziiert, aus der Bibliothek <a href="https://pythonhosted.org/Flask-Mail/" target="_blank"><strong>Flask-Mail</strong></a> und an den angegebenen User (<em>to</em>) gesendet. Der Inhalt der Mail ist dabei innerhalb des <em>template</em> fest vorgegeben und befindet sich im <strong><a href="/monitor-api-doku/docs/static">static</a></strong> als <em>reset_password_mail.html</em>.</p>
+
+<p><img src="/monitor-api-doku/assets/images/mailer.png" alt="uml"></p>
+
+<h3 id="user">User</h3>
+<p>Diese Klasse erbt von <strong><a href="https://flask-login.readthedocs.io/en/latest/">UserMixin</a></strong> und <strong><a href="https://flask-login.readthedocs.io/en/latest/">db.Model</a></strong> und ist das <em>Grundgerüst</em> eines neuen/angemeldeten Nutzers. Die Klassen-Variable <strong><em>confirmed</em></strong> gibt hierbei wieder ob dem Nutzer seine Mailadresse bestätigt ist oder nicht. Default ist Sie <strong>None</strong>. Die Klasse bildet dabei alle Felder der <a href="/monitor-api-doku/docs/user/database/database.html"><strong>Datenbanktabelle</strong></a> <strong><em>user</em></strong> ab, in welcher alle notwendigen Informationen abgelegt sind.</p>
+
+<p><img src="/monitor-api-doku/assets/images/user.png" alt="uml"></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Methodenname</th>
+      <th>Parameter</th>
+      <th>Return</th>
+      <th>Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>init</strong></td>
+      <td>username, password, email,lastname,firstname,facility,access,business,confirmed,confirmed_on=None</td>
+      <td>Constructor <img class="emoji" title=":wink:" alt=":wink:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f609.png" height="20" width="20">
+</td>
+      <td>Diese Methode erstellt eine neue Instanz der Klasse User, hierbei ist der Parameter confirmed_on als <strong>Default</strong> <em>None</em>.</td>
+    </tr>
+    <tr>
+      <td>is_authenticated</td>
+      <td> </td>
+      <td>Boolean:state</td>
+      <td>Methode welche wiedergibt, ob der Nutzer authentifiziert ist, also ob seine Mail korrekt ist</td>
+    </tr>
+    <tr>
+      <td>is_active</td>
+      <td> </td>
+      <td>String:access</td>
+      <td>gibt wieder, welche rechte der Nutzer besitzt → <strong>TODO</strong>
+</td>
+    </tr>
+    <tr>
+      <td>is_anonymous</td>
+      <td> </td>
+      <td>Boolean:state</td>
+      <td>zeigt an ob der Nutzer einen Anonymen Status besitzt → <strong>TODO</strong>
+</td>
+    </tr>
+    <tr>
+      <td>get_id</td>
+      <td> </td>
+      <td>int:id</td>
+      <td>gibt die <strong>Id</strong> des Nutzers zurück</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="token">Token</h3>
+<p>Diese Klasse regelt das Verifizieren und erstellen eines <strong>Token</strong>. Sie wird hierbei bei der Überprüfung der Mailadresse des Nutzers eingesetzt.  Für die Serilizierung wurde die Bibliothek <strong><a href="https://pythonhosted.org/itsdangerous/" target="_blank">itsdangerous</a></strong> eingesetzt.</p>
+
+<p><img src="/monitor-api-doku/assets/images/token.png" alt="token"></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Methodenname</th>
+      <th>Parameter</th>
+      <th>Return</th>
+      <th>Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>generate_confirmation_token()</td>
+      <td>String:email</td>
+      <td>String:token</td>
+      <td>Methode, welche aus der übergebenen Mailadresse einen Token erstellt</td>
+    </tr>
+    <tr>
+      <td>confirm_token</td>
+      <td>String:token, Int:expiration</td>
+      <td>String:email</td>
+      <td>Methode welche den Token zu der übergebenen Mail transformiert. Anhand der <em>expiration</em> kann festgelegt werden, wie lange der Token gültig ist. Default ist <strong>3600</strong>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="security">Sicherheit</h2>
+<p>In diesem Kapitel wird der Punkt Sicherheit der API-Dokumentiert, hierbei wurde größtenteils auf die <em>On-Board</em> Mittel der <em>Flask</em>-Library zurückgegriffen.</p>
+
+<h3 id="url-manipulation">URL-Manipulierung</h3>
+<p>Um auch nur berechtigte Nutzer die jeweilige URL zur Verfügung zu stellen, wurde der Dekorator <em><strong>@login_required</strong></em> aus der Bibliothek <strong><a href="https://flask-login.readthedocs.io/en/latest/" target="_blank">Flask-Login</a></strong> eingesetzt.
+Ist der Nutzer nicht angemeldet wird er zurück auf die Anmeldeseite geleitet. Somit ist es nicht möglich unangemeldet auf die <strong><a href="#services">OGC-Service Seite</a></strong> zuzugreifen.<br>
+Anbei die Fallunterscheidung:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">'user/services.html'</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">current_user</span><span class="o">.</span><span class="n">api_key</span><span class="p">,</span> <span class="n">access</span><span class="o">=</span><span class="n">current_user</span><span class="o">.</span><span class="n">access</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+       <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">"{}login"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Config</span><span class="o">.</span><span class="n">URL_ENDPOINT</span><span class="p">))</span>
+</code></pre></div></div>
+<h3 id="sql-injection">SQL-Injektion</h3>
+<p><em>SQL-Injection (dt. SQL-Einschleusung) bezeichnet das Ausnutzen einer Sicherheitslücke in Zusammenhang mit SQL-Datenbanken, die durch mangelnde Maskierung oder Überprüfung von Metazeichen in Benutzereingaben entsteht.</em> <a href="https://de.wikipedia.org/wiki/SQL-Injection">Wikipedia</a></p>
+
+<p>Dies kann beispielsweise auftreten wenn Passwort und Username von der Datenbank abgefragt werden und dabei der Template String für den Username so manipuliert wird, das immer <strong>True</strong> zurückgegeben wird.
+In der Anwendung wurde die Bibliothek <strong><a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/" target="_blank"> Flask-SQLAlchemy</a></strong> eingesetzt. Welche die entsprechenden Nutzer herausfiltert.<br>
+Am Besipiel wurde die Email übergeben und der Nutzer aus der <strong>DB</strong> authentifiziert.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+</code></pre></div></div>
+
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

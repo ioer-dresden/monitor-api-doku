@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+    <title>Backend - IÖR-Monitor API Dokumentation</title>
+
+    
+  
+
+  <link rel="shortcut icon" href="http://localhost:4000/monitor-api-doku/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="http://localhost:4000/monitor-api-doku/assets/css/just-the-docs.css">
+
+  
+
+  
+    <script type="text/javascript" src="http://localhost:4000/monitor-api-doku/assets/js/vendor/lunr.min.js"></script>
+  
+  <script type="text/javascript" src="http://localhost:4000/monitor-api-doku/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Backend | IÖR-Monitor API Dokumentation</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Backend" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung" />
+<meta property="og:description" content="Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung" />
+<link rel="canonical" href="http://localhost:4000/monitor-api-doku/docs/admin/backend/backend.html" />
+<meta property="og:url" content="http://localhost:4000/monitor-api-doku/docs/admin/backend/backend.html" />
+<meta property="og:site_name" content="IÖR-Monitor API Dokumentation" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/monitor-api-doku/docs/admin/backend/backend.html","description":"Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung","headline":"Backend","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+  <div class="page-wrap">
+    <div class="side-bar">
+      <a href="http://localhost:4000/monitor-api-doku" class="site-title fs-6 lh-tight">IÖR-Monitor API Dokumentation</a>
+      <span class="fs-3"><button class="js-main-nav-trigger navigation-list-toggle btn btn-outline" type="button" data-text-toggle="Hide">Menu</button></span>
+      <div class="navigation main-nav js-main-nav">
+        <nav role="navigation" aria-label="Main navigation">
+  <ul class="navigation-list">
+    
+    
+      
+        
+          <li class="navigation-list-item active">
+            
+            <a href="http://localhost:4000/monitor-api-doku/404.html" class="navigation-list-link"></a>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/" class="navigation-list-link">Home</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/sora" class="navigation-list-link">Sora</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item active">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/admin" class="navigation-list-link">Admin</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/admin/frontend/frontend.html" class="navigation-list-link">Frontend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item  active">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/admin/backend/backend.html" class="navigation-list-link active">Backend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/user" class="navigation-list-link">User</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/user/backend/backend.html" class="navigation-list-link">Backend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/user/database/database.html" class="navigation-list-link">Datenbank</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/user/frontend/frontend.html" class="navigation-list-link">Frontend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/weiterentwicklung.html" class="navigation-list-link">Weiterentwicklung</a>
+            
+          </li>
+        
+      
+    
+  </ul>
+</nav>
+
+      </div>
+      <footer role="contentinfo" class="site-footer">
+        <p class="text-small text-grey-dk-000 mb-0">This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</p>
+      </footer>
+    </div>
+    <div class="main-content-wrap js-main-content" tabindex="0">
+      <div class="page-header">
+        <div class="main-content">
+          
+          <div class="search js-search">
+            <div class="search-input-wrap">
+              <input type="text" class="js-search-input search-input" tabindex="0" placeholder="Search IÖR-Monitor API Dokumentation" aria-label="Search IÖR-Monitor API Dokumentation" autocomplete="off">
+              <svg width="14" height="14" viewbox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" class="search-icon"><title>Search</title>
+<g fill-rule="nonzero"><path d="M17.332 20.735c-5.537 0-10-4.6-10-10.247 0-5.646 4.463-10.247 10-10.247 5.536 0 10 4.601 10 10.247s-4.464 10.247-10 10.247zm0-4c3.3 0 6-2.783 6-6.247 0-3.463-2.7-6.247-6-6.247s-6 2.784-6 6.247c0 3.464 2.7 6.247 6 6.247z"></path><path d="M11.672 13.791L.192 25.271 3.02 28.1 14.5 16.62z"></path></g></svg>
+            </div>
+            <div class="js-search-results search-results-wrap"></div>
+          </div>
+          
+          
+            <ul class="list-style-none text-small mt-md-1 mb-md-1 pb-4 pb-md-0 js-aux-nav aux-nav">
+              
+                <li class="d-inline-block my-0"><a href="https://github.com/ioer-dresden">IÖR auf GitHub</a></li>
+              
+            </ul>
+          
+        </div>
+      </div>
+      <div class="main-content">
+        
+          
+            <nav class="breadcrumb-nav">
+              <ol class="breadcrumb-nav-list">
+                
+                  <li class="breadcrumb-nav-list-item"><a href="http://localhost:4000/monitor-api-doku/docs/admin">Admin</a></li>
+                
+                <li class="breadcrumb-nav-list-item"><span>Backend</span></li>
+              </ol>
+            </nav>
+          
+        
+        <div id="main-content" class="page-content" role="main">
+          <h1 id="backend">Backend</h1>
+
+<p>Die Hauptlast bei für die Administrierung der Dienste liegt im Backend. Welche in diesem Kapitel anhand ihrer Klassen und Schichten dokumentiert werden soll.</p>
+
+<ul>
+  <li>
+<a href="#services"><strong>Services</strong></a>
+    <ul>
+      <li><a href="#ogc-factory"><strong>OGC-Dienste</strong></a></li>
+      <li><a href="#ind-values"><strong>Indicator-Values</strong></a></li>
+      <li><a href="#geosn"><strong>GeoMIS</strong></a></li>
+    </ul>
+  </li>
+  <li><a href="#interfaces"><strong>Interfaces</strong></a></li>
+  <li><a href="#models"><strong>Models</strong></a></li>
+  <li><a href="#routes"><strong>routes</strong></a></li>
+</ul>
+
+<h2 id="services">Services</h2>
+
+<p>Die Services übernehmen die Instanziierung der Objekte und erstellen die vom Clienten über das Dashboard gewünschten Dienste über die <em>REST</em>-Schnittstelle (<a href="#routes"><strong><em>routes.py</em></strong></a>). Für die OGC-Dienste wurde das <a href="https://jaxenter.de/mit-factory-pattern-designprobleme-losen-5040"><em>Factory</em></a>-Pattern eingesetzt, welches je nach Parametrisierung, den entsprechenden <strong><em>OGC</em></strong>-Layer instanziiert.</p>
+
+<h3 id="ogc-factory">OGC-Factory</h3>
+<p>Die OGC-Factory wird von der <em>routes.py</em> aufgerufen um die gewünschten Dienste zu erstellen. <em>Die <strong>Factory-Pattern-Methode</strong> definiert dabei ein Interface für die Erstellung von Objekten und delegiert die Objekterstellung an die Sub-Klassen. Ziel ist, dass der Client nichts von der Objekt-Instantiierung mitbekommt und über eine gemeinsame Schnittstelle auf die Objekte zugreift. Factory-Patterns kapseln dadurch den Creation Code vom Client</em> [<a href="https://jaxenter.de/mit-factory-pattern-designprobleme-losen-5040" target="blank">Quelle</a>].</p>
+
+<p>Um dies zu verdeutlichen ist nachfolgend der Code abgebildet:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">OgcFactory</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">_service</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">service</span> <span class="o">=</span> <span class="n">_service</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="c">#localhost for testing</span>
+        <span class="k">if</span><span class="p">(</span><span class="s">"localhost"</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">url</span> <span class="ow">or</span> <span class="s">"127.0.0.1:5000"</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">):</span>
+            <span class="n">app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">"OGC Service for localhost"</span><span class="p">)</span>
+            <span class="c">#dummy path</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span><span class="s">'G:</span><span class="se">\\</span><span class="s">test</span><span class="se">\\</span><span class="s">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">service</span><span class="p">)</span>
+        <span class="c"># server path</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">"OGC Service for monitor.ioer.de"</span><span class="p">)</span>
+            <span class="c">#dummy path</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="s">'/server/'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">service</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">create_service</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">service</span> <span class="o">==</span><span class="s">'wms'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">WmsService</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">service</span> <span class="o">==</span><span class="s">'wcs'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">WcsService</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">service</span><span class="o">==</span><span class="s">'wfs'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">WfsService</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Der Konstruktor definiert dabei auf welchen Pfaden die Services erstellt werden sollen.</p>
+
+<p class="label">WCS-Services</p>
+<p class="label">WFS-Service</p>
+<p class="label">WMS-Service</p>
+
+<p>Die Klassen <em><strong>WCS-Services, WFS-Service und WMS-Service</strong></em> implementieren die vom <a href="#ogc-interface"><strong><em>OgcService</em></strong></a>-Interface definierten Methoden.
+Hierbei werden in der Methode <em>createAllServices</em> alle für die <strong>OGC-Rasterdienste bzw. Vektordienste</strong> freigegebenen Indikatoren vom Backend abgefragt. Diese Aufgabe wird von der Klasse <a href="#ind-values"><strong><em>Indicator-Values</em></strong></a> übernommen.
+Anhand einer Schleife wird für jeden verfügbaren Indikator ein neuer <a href="#ind"><strong><em>IoerIndicator</em></strong></a> instanziiert und an die <em>writeFile</em> Methode übergeben. Diese erstellt anhand der <em>Getter</em>-Methoden des übergebenen Indikators das entsprechende <em>Mapfile</em> in dem angegebenen Pfad. Der Pfad wird hierbei im Konstruktor übergegeben, diese Aufgabe übernimmt die <a href="#ogc-factory"><strong>Factory</strong></a>.</p>
+
+<iframe src="/monitor-api-doku/assets/html/wcs-service.html" frameborder="0" allowfullscreen="" onload="this.width=screen.width*0.5;this.height=screen.height*0.6;"></iframe>
+
+<p>Folgend sind die Parameter und Methoden dokumentiert.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Methode</th>
+      <th>Parameter</th>
+      <th>Beschreibung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>public: <strong>init</strong>
+</td>
+      <td>
+<em>optional</em>-String:<strong>Path</strong>
+</td>
+      <td>Konstruktor <img class="emoji" title=":wink:" alt=":wink:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f609.png" height="20" width="20">, Der Pfad Paramter wird bei der Verwendung der <a href="#ogc-factory"><strong>Factory</strong></a> durch diese übernommen</td>
+    </tr>
+    <tr>
+      <td>public: createAllServices</td>
+      <td>Object: Indikator, <em>optional</em>-String:<strong>Path</strong>
+</td>
+      <td>Methode um einzelne Dienste für einen übergebenen Indikator zu erstellen</td>
+    </tr>
+    <tr>
+      <td>private: writeFile</td>
+      <td>
+<em>optional</em>-String:<strong>Path</strong>)</td>
+      <td>Diese Methode erstellt anhand des übergebenen Indikators das gewünschte <em>Mapfile</em>, primär wird der Pfad aus dem im Konstruktor definierten Pfad übergeben. Als Rückgabe wird ein Objekt mit dem Indikator und dessen Status (erstellt/Fehler) übergeben.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ind-values">Indicator-Values</h3>
+
+<p>Diese Klasse hat die Aufgabe für die Übergebene Raumgliederung alle verfügbaren Indikatoren vom <a href="https://ioer-dresden.github.io/monitor-doku/docs/backend" target="blank"><strong>Monitor-Backend</strong></a> abzurufen. Über die Methode <em>getAllAvaliableServiceValues</em> werden anhand des Paramters Raumgliederung (raster,gebiete) alle verfügbaren Indikatoren abgerufen und ein JSON-Objekt zurückgegeben. Der Code der Klasse ist nachfolgend abgebildet.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">IndicatorValues</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">format</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">Config</span><span class="o">.</span><span class="n">URL_BACKEND_MONITOR</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">json</span> <span class="o">=</span> <span class="s">'{"format":{"id":"</span><span class="si">%</span><span class="s">s"},"query":"getAllIndicators"}'</span> <span class="o">%</span> <span class="n">format</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="o">=</span><span class="n">format</span>
+        <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s">'values'</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="c">#methon to return all possible indicator values which are possible for an indicator</span>
+    <span class="k">def</span> <span class="nf">getAllAvaliableServiceValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">service</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span><span class="p">[]</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+            <span class="n">cat_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="s">'cat_name'</span><span class="p">]</span>
+            <span class="n">cat_name_en</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="s">'cat_name_en'</span><span class="p">]</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="s">'indicators'</span><span class="p">]</span>
+            <span class="n">ind_values</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+                <span class="c"># if 1: the service is avaliable else not</span>
+                <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s">"ogc"</span><span class="p">][</span><span class="n">service</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">ind_val</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                    <span class="n">ind_id</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">({</span><span class="s">"id"</span><span class="p">:</span><span class="n">i</span><span class="p">})</span>
+                    <span class="n">merge</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+                    <span class="n">merge</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ind_id</span><span class="p">)</span>
+                    <span class="n">merge</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ind_val</span><span class="p">)</span>
+                    <span class="k">del</span> <span class="n">merge</span><span class="p">[</span><span class="s">'atkis'</span><span class="p">]</span>
+                    <span class="k">del</span> <span class="n">merge</span><span class="p">[</span><span class="s">'ogc'</span><span class="p">]</span>
+                    <span class="n">ind_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">merge</span><span class="p">)</span>
+
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s">'cat_id'</span><span class="p">:</span><span class="n">x</span><span class="p">,</span><span class="s">'cat_name'</span><span class="p">:</span><span class="n">cat_name</span><span class="p">,</span><span class="s">'cat_name_en'</span><span class="p">:</span><span class="n">cat_name_en</span><span class="p">,</span><span class="s">"values"</span><span class="p">:</span><span class="n">ind_values</span><span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">res</span>
+</code></pre></div></div>
+
+<h3 id="geosn">GeoSN</h3>
+
+<iframe src="/monitor-api-doku/assets/html/geosn.html" frameborder="0" allowfullscreen="" onload="this.width=screen.width*0.5;this.height=screen.height*0.2;"></iframe>
+
+<p>Diese Klasse implementiert das Interface <a href="#geosn-service"><strong>GeoSN-Service</strong></a> und hat die Aufgabe, die Dienste des IÖR-Monitors mit dem <a href="https://geomis.sachsen.de/terraCatalog/Start.do;jsessionid=C1A9B5D0D432772FDC164C57CB57845B" target="blank"><strong>GeoMIS</strong></a> zu verknüpfen. Der Service wurde notwendig, da zum aktuellen Zeitpunkt keine <strong>API</strong> auf der Seite des <em>GeoMIS</em> vorhanden ist, welche diese Aufgabe übernimmt.</p>
+
+<p>Anhand der vom <a href="mailto:geomis@geosn.sachsen.de">GeoMIS <img class="emoji" title=":email:" alt=":email:" src="https://github.githubassets.com/images/icons/emoji/unicode/2709.png" height="20" width="20"></a> bereitgestellten XML-Dateien, werde diese mit den aktuellen Informationen der Datenbank synchronisiert. Hierfür parst die Methode <em>updateFile</em> alle <em>XML-Dateien</em> in dem vorgegebenen Verzeichnis. Passt die Parametrisierung mit der gesetzten Klassenvariable <em>Indikator</em> überein, wird dieses aktualisiert. Hierfür  fällt der händische Update-Vorgang in der GUI des GeoMIS weg. Durch die Freigabe des <a href="https://monitor.ioer.de/ogc/" target="blank"><em>Verzeichnisses</em></a> nach außen, kann das GeoMIS die in den XML-Dateien definierten Dienste <strong><em>harvesten</em></strong>.</p>
+
+<p>Die Methode <em>update</em> ruft von Dienst <a href="#ind-values"><em>Indicator-Values</em></a> alle Raster und Vektor Indikatoren auf, welche das IÖR nach außen freigibt und ruft auf deren Basis die private Methode <em>updateFile</em> auf. Iterativ wird dabei die Klassenvariable <em>Indikator</em> gesetzt, welche jeweils das Model <a href="#ind"><em>IÖR-Indikator</em></a> ist.</p>
+
+<h2 id="interfaces">Interfaces</h2>
+<p><em>Eine <strong>Schnittstelle</strong> (englisch interface) gibt in der objektorientierten Programmierung an, welche Methoden in den unterschiedlichen Klassen vorhanden sind oder vorhanden sein müssen.</em> <a href="https://de.wikipedia.org/wiki/Schnittstelle_(Objektorientierung)" target="blank">Quelle</a></p>
+
+<h3 id="ogc-interface">OgcService</h3>
+
+<iframe src="/monitor-api-doku/assets/html/ogc-services.html" frameborder="0" allowfullscreen="" onload="this.width=screen.width*0.5;this.height=screen.height*0.18;"></iframe>
+
+<p>Dieses Interface definiert die notwendigen Methoden für die Erstellung eines IÖR-OGC Dienstes.</p>
+
+<h3 id="geosn-service">GeoSN-Service</h3>
+
+<iframe src="/monitor-api-doku/assets/html/geosn-service.html" frameborder="0" allowfullscreen="" onload="this.width=screen.width*0.5;this.height=screen.height*0.18;"></iframe>
+
+<p>Dieses Interface definiert die notwendigen Methoden für die Erstellung eines GeoSN Dienstes.</p>
+
+<h3 id="int-ind">Indikator</h3>
+
+<iframe src="/monitor-api-doku/assets/html/indikator.html" frameborder="0" allowfullscreen="" onload="this.width=screen.width*0.5;this.height=screen.height*0.35;"></iframe>
+
+<p>Dieses Interface definiert einen Indikator für das IÖR-Indikatorensystem.</p>
+
+<h2 id="models">Models</h2>
+<p><em>Repräsentiert den internen Zustand eines Objekts und speichert alle interessanten Geschäftsdaten. Ein Model bietet Methoden an, mit denen sich der aktuelle Zustand erfragen und ändern lässt.</em> <a href="Repr%C3%A4sentiert%20den%20internen%20Zustand%20eines%20Objekts%20und%20speichert%20alle%20interessanten%20Gesch%C3%A4ftsdaten.%20Ein%20Model%20bietet%20Methoden%20an,%20mit%20denen%20sich%20der%20aktuelle%20Zustand%20erfragen%20und%20%C3%A4ndern%20l%C3%A4sst." target="blank">Quelle</a></p>
+
+<h3 id="ind">IÖR-Indikator</h3>
+
+<p>Diese Klasse wird verwendet um innerhalb der Sevices einen Indikator zu instanziieren und damit auf die getter zuzugreifen. Das Verhalten der Klasse wird dabei durch das Interaface <a href="#int-ind">Indikator</a> definiert.
+Die Klasse besitzt auch eine Methode toJSON, welche verwendet wird um in den Service-Klassen den Status der Indikatorerstellung festzuhalten. Hierfür wird ein sogenannter <em><strong>state</strong></em> übergeben. Nachfolgend ist der Code abgebildet:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">toJSON</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">state</span><span class="o">=</span><span class="s">"create"</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="nb">id</span><span class="p">:{</span>
+            <span class="s">"state"</span><span class="p">:</span> <span class="n">state</span><span class="p">,</span>
+            <span class="s">"name"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s">"description"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+            <span class="s">"times"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_string</span><span class="p">,</span>
+            <span class="s">"spatial_extends"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">spatial_extends</span><span class="p">,</span>
+            <span class="s">"unit"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">,</span>
+            <span class="s">"methodik"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">methodology</span>
+        <span class="p">}}</span>
+</code></pre></div></div>
+
+<h3 id="toolbox">Toolbox</h3>
+
+<p>Die Toolbox übernimmt Aufgaben die in vielen Klassen benötigt werden. Nachfolgend ist ihr Code abgebildet.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Toolbox</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">clean_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">"</span><span class="se">\\</span><span class="s">"</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span><span class="s">'"'</span><span class="p">:</span><span class="s">""</span><span class="p">,</span><span class="s">"Kurzbeschreibung"</span><span class="p">:</span><span class="s">""</span><span class="p">,</span><span class="s">"  "</span><span class="p">:</span><span class="s">""</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">json_validator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">except</span> <span class="nb">ValueError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Methode</th>
+      <th>Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>clean_string</strong></td>
+      <td>Anhand eines übergebenen Strings wewrden nicht benötigte Charaktere aus diesem entfernt, dies kommt vor allem bei den langen Definitionen vor, welche von den Mapfiles nicht gelesen werden können</td>
+    </tr>
+    <tr>
+      <td><strong>json_validator</strong></td>
+      <td>Prüft ob der übergebene String im JSON-Format ist, sonst wird False zurückgebenen.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="color">Color</h3>
+
+<p>Die Klasse Color wird für den <a href="#ogc-factory"><strong>WMS-Service</strong></a> verwendet, um die Farbliche Klasseneinteilung der Mapfiles zu bewerkstelligen und um notwendige Umrechnungen durchzuführen.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Methode</th>
+      <th>Paramter</th>
+      <th>Rückgabe</th>
+      <th>Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>__init__</strong></td>
+      <td>String:min_color,String:max_color,int:classes</td>
+      <td>Konstruktor <img class="emoji" title=":wink:" alt=":wink:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f609.png" height="20" width="20">
+</td>
+      <td>Bei der instanziierung der <em>Color</em>-Klasse muss der Minimale- und MAximale Farbwert als <strong>HEX-Code</strong> angegeben werden. Desweiteren ist es wichtig die Anzahl der Klassen zu definieren, um den Aufbauenden Berechnungen mitzuteilen, welche Breite des farbliche Spektrum besitzen soll.</td>
+    </tr>
+    <tr>
+      <td>private:<strong>Berechnung</strong>
+</td>
+      <td>String:Min-Color, String:Max-Color</td>
+      <td>Array</td>
+      <td>Diese Methode erstellt ausgehend von der Anzhal der Klassen ein Array, welches für die übergebenen Minimal- und Maximalwerte die dazwischenliegenden Farbcodes generiert.</td>
+    </tr>
+    <tr>
+      <td>private:<strong>HexToRGB</strong>
+</td>
+      <td>String:Hex-Code</td>
+      <td>String:RGB-Code</td>
+      <td>Diese Methode berechnet für den übergebenen Hex-Code den RGB-Wert aus</td>
+    </tr>
+    <tr>
+      <td>private:<strong>RGBToHex</strong>
+</td>
+      <td>String:RGB-Code</td>
+      <td>String:Hex-Code</td>
+      <td>Diese Methode berechnet für den übergebenen RGB-Code den HEX-Wert aus</td>
+    </tr>
+    <tr>
+      <td>public:<strong>buildColorPalette</strong>
+</td>
+      <td> </td>
+      <td>Array</td>
+      <td>Diese Methode nutzt die privaten Methoden um die Finale Farbpallete zu erstellen. In dem Array wird dann für jede Klasse der entsprechende Farbwert als <strong>HEX-Code</strong> gespeichert</td>
+    </tr>
+    <tr>
+      <td>public: <strong>toString</strong>
+</td>
+      <td> </td>
+      <td>String</td>
+      <td>Gibt die Klassen-Paramter als String zurück</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="routes">Routing</h2>
+
+<p>Das Route Mapping wurde für die administrativen Aufgaben implementiert. Um die Übersicht zu bewahren wurde wie auch schon für die anderen Aufgabend er API ein <a href="/monitor-api-doku/"><strong>Blueprint</strong></a> angelegt, mit dem Kürzel <em>admin</em>, welches die URL erweitert. 
+Nachfolgend ist der Code abgebildet, welcher demonstriert welche Klassen bei der jeweiligen URL aufgerufen werden.
+Die Schnittstelle ist nur für angemeldete <a href="https://monitor.ioer.de/monitor_api/login" target="blank"><strong>User</strong></a> zu erreichen, was über die Expession <em>@login_required</em> realisiert wurde.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@admin.route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="nd">@login_required</span>
+<span class="k">def</span> <span class="nf">admin_page</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">"admin/index.html"</span><span class="p">)</span>
+
+<span class="nd">@admin.route</span><span class="p">(</span><span class="s">'/wfs'</span><span class="p">,</span><span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'GET'</span><span class="p">,</span> <span class="s">'POST'</span><span class="p">])</span>
+<span class="nd">@login_required</span>
+<span class="k">def</span> <span class="nf">wfs_service</span><span class="p">():</span>
+    <span class="n">wfs</span> <span class="o">=</span> <span class="n">OgcFactory</span><span class="p">(</span><span class="s">'wfs'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">wfs</span><span class="o">.</span><span class="n">create_service</span><span class="p">()</span><span class="o">.</span><span class="n">createAllServices</span><span class="p">())</span>
+
+<span class="nd">@admin.route</span><span class="p">(</span><span class="s">'/wcs'</span><span class="p">,</span><span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'POST'</span><span class="p">])</span>
+<span class="nd">@login_required</span>
+<span class="k">def</span> <span class="nf">wcs_service</span><span class="p">():</span>
+    <span class="n">wcs</span> <span class="o">=</span> <span class="n">OgcFactory</span><span class="p">(</span><span class="s">"wcs"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">wcs</span><span class="o">.</span><span class="n">create_service</span><span class="p">()</span><span class="o">.</span><span class="n">createAllServices</span><span class="p">())</span>
+
+<span class="nd">@admin.route</span><span class="p">(</span><span class="s">'/wms'</span><span class="p">,</span><span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'POST'</span><span class="p">])</span>
+<span class="nd">@login_required</span>
+<span class="k">def</span> <span class="nf">wms_service</span><span class="p">():</span>
+    <span class="n">wms</span> <span class="o">=</span> <span class="n">OgcFactory</span><span class="p">(</span><span class="s">"wms"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">wms</span><span class="o">.</span><span class="n">create_service</span><span class="p">()</span><span class="o">.</span><span class="n">createAllServices</span><span class="p">())</span>
+
+<span class="nd">@admin.route</span><span class="p">(</span><span class="s">'/geosn'</span><span class="p">,</span><span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'POST'</span><span class="p">])</span>
+<span class="nd">@login_required</span>
+<span class="k">def</span> <span class="nf">geosn_service</span><span class="p">():</span>
+    <span class="n">geosn</span> <span class="o">=</span> <span class="n">GeoSN</span><span class="p">(</span><span class="s">'/srv/www/htdocs/monitor_ogc_xml/'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">geosn</span><span class="o">.</span><span class="n">update</span><span class="p">())</span>
+</code></pre></div></div>
+
+<p>In der nachfolgenden Tabelle sind die URL-Endpoints und deren Aufgaben kurz zusammengefasst.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Endpoint</th>
+      <th>Beschreibung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>/admin/</td>
+      <td>beim Aufruf dieser URL wird das zugrundeliegende Template aus dem <a href="/monitor-api-doku/docs/static"><strong>Static</strong></a> gerendert (admin/index.html).</td>
+    </tr>
+    <tr>
+      <td>/admin/wfs</td>
+      <td>Hier wird der <a href="#ogc-factory"><strong>OGC-Factory</strong></a> als Service <strong>wfs</strong> mitgegeben, wodruch alle Web Feature Services des IÖR aktualisiert werden.</td>
+    </tr>
+    <tr>
+      <td>/admin/wcs</td>
+      <td>Hier wird der <a href="#ogc-factory"><strong>OGC-Factory</strong></a> als Service <strong>wcs</strong> mitgegeben, wodruch alle Web Coverage Services des IÖR aktualisiert werden.</td>
+    </tr>
+    <tr>
+      <td>/admin/wms</td>
+      <td>Hier wird der <a href="#ogc-factory"><strong>OGC-Factory</strong></a> als Service <strong>wms</strong> mitgegeben, wodruch alle Web Map Services des IÖR aktualisiert werden.</td>
+    </tr>
+    <tr>
+      <td>/admin/geosn</td>
+      <td>Hier wird die Klasse <a href="#geosn"><strong>GeoSN</strong></a> aufgerufen, womit alle Dienste des IÖR im <strong>GeoMIS</strong> aktualisiert werden.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+    <title>Sora - IÖR-Monitor API Dokumentation</title>
+
+    
+  
+
+  <link rel="shortcut icon" href="http://localhost:4000/monitor-api-doku/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="http://localhost:4000/monitor-api-doku/assets/css/just-the-docs.css">
+
+  
+
+  
+    <script type="text/javascript" src="http://localhost:4000/monitor-api-doku/assets/js/vendor/lunr.min.js"></script>
+  
+  <script type="text/javascript" src="http://localhost:4000/monitor-api-doku/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Sora | IÖR-Monitor API Dokumentation</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Sora" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung" />
+<meta property="og:description" content="Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung" />
+<link rel="canonical" href="http://localhost:4000/monitor-api-doku/docs/sora" />
+<meta property="og:url" content="http://localhost:4000/monitor-api-doku/docs/sora" />
+<meta property="og:site_name" content="IÖR-Monitor API Dokumentation" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/monitor-api-doku/docs/sora","description":"Dokumentation des Monitors der Siedlungs- und Freiraumentwicklung","headline":"Sora","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+  <div class="page-wrap">
+    <div class="side-bar">
+      <a href="http://localhost:4000/monitor-api-doku" class="site-title fs-6 lh-tight">IÖR-Monitor API Dokumentation</a>
+      <span class="fs-3"><button class="js-main-nav-trigger navigation-list-toggle btn btn-outline" type="button" data-text-toggle="Hide">Menu</button></span>
+      <div class="navigation main-nav js-main-nav">
+        <nav role="navigation" aria-label="Main navigation">
+  <ul class="navigation-list">
+    
+    
+      
+        
+          <li class="navigation-list-item active">
+            
+            <a href="http://localhost:4000/monitor-api-doku/404.html" class="navigation-list-link"></a>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/" class="navigation-list-link">Home</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item active">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/sora" class="navigation-list-link active">Sora</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/admin" class="navigation-list-link">Admin</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/admin/frontend/frontend.html" class="navigation-list-link">Frontend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/admin/backend/backend.html" class="navigation-list-link">Backend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/user" class="navigation-list-link">User</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/user/backend/backend.html" class="navigation-list-link">Backend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/user/database/database.html" class="navigation-list-link">Datenbank</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/monitor-api-doku/docs/user/frontend/frontend.html" class="navigation-list-link">Frontend</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/monitor-api-doku/docs/weiterentwicklung.html" class="navigation-list-link">Weiterentwicklung</a>
+            
+          </li>
+        
+      
+    
+  </ul>
+</nav>
+
+      </div>
+      <footer role="contentinfo" class="site-footer">
+        <p class="text-small text-grey-dk-000 mb-0">This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</p>
+      </footer>
+    </div>
+    <div class="main-content-wrap js-main-content" tabindex="0">
+      <div class="page-header">
+        <div class="main-content">
+          
+          <div class="search js-search">
+            <div class="search-input-wrap">
+              <input type="text" class="js-search-input search-input" tabindex="0" placeholder="Search IÖR-Monitor API Dokumentation" aria-label="Search IÖR-Monitor API Dokumentation" autocomplete="off">
+              <svg width="14" height="14" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" class="search-icon"><title>Search</title><g fill-rule="nonzero"><path d="M17.332 20.735c-5.537 0-10-4.6-10-10.247 0-5.646 4.463-10.247 10-10.247 5.536 0 10 4.601 10 10.247s-4.464 10.247-10 10.247zm0-4c3.3 0 6-2.783 6-6.247 0-3.463-2.7-6.247-6-6.247s-6 2.784-6 6.247c0 3.464 2.7 6.247 6 6.247z"/><path d="M11.672 13.791L.192 25.271 3.02 28.1 14.5 16.62z"/></g></svg>
+            </div>
+            <div class="js-search-results search-results-wrap"></div>
+          </div>
+          
+          
+            <ul class="list-style-none text-small mt-md-1 mb-md-1 pb-4 pb-md-0 js-aux-nav aux-nav">
+              
+                <li class="d-inline-block my-0"><a href="https://github.com/ioer-dresden">IÖR auf GitHub</a></li>
+              
+            </ul>
+          
+        </div>
+      </div>
+      <div class="main-content">
+        
+          
+        
+        <div id="main-content" class="page-content" role="main">
+          <h1 id="sora---sozial-raumwissenschaftliche-forschungsdateninfrastruktur"><a href="http://www.sora-projekt.de/" target="blank">SoRa</a> - Sozial-Raumwissenschaftliche Forschungsdateninfrastruktur</h1>
+
+<p>Da es sich bei Sora um ein reines Backend handelt, wird auch nur dieses vorgestellt. 
+Das Backend hat vor allem die Aufgabe die im SoRa Projekt gestellten Anforderungen zu erfüllen indem <strong>freie Nutzeranfragen</strong> auf topografischen Geobasisdaten beantwortet werden. Diese werden vom Clienten gestellt.</p>
+
+<h1 id="inhalt">Inhalt</h1>
+
+<ul>
+  <li><a href="#rest"><strong>Rest-API</strong></a>
+    <ul>
+      <li><a href="#service-coord">Abfrage von Indikatorwerten zu Koordinaten</a></li>
+      <li><a href="#service-routing">Routing zum nächstgelegenen POI</a></li>
+      <li><a href="#service-poi">Routing zwischen zwei Koordinaten</a></li>
+    </ul>
+  </li>
+  <li><a href="#rdf"><strong>RDF</strong></a>
+    <ul>
+      <li><a href="#ind">Indicators</a></li>
+      <li><a href="#cat">Category</a></li>
+    </ul>
+  </li>
+  <li><a href="#flask"><strong>Flask</strong> (monitor.ioer.de)</a></li>
+  <li><a href="#edn"><strong>Esri-Server</strong> (edn.ioer.de)</a>
+    <ul>
+      <li><a href="#coordinates">Abfrage von Indikatorwerten zu Koordinaten</a></li>
+      <li><a href="#routing-xy">Routing zwischen zwei Koordinaten</a></li>
+      <li><a href="#routing-poi">Routing zum nächstgelegenen POI</a></li>
+    </ul>
+  </li>
+  <li><a href="#probleme"><strong>Probleme</strong></a></li>
+</ul>
+
+<h2 id="architektur">Architektur</h2>
+
+<p>Alle Anfragen für das <strong>SoRa</strong>-Forschungsprojekt werden an die Monitor-API geschickt, wofür der <a href="http://flask.pocoo.org/docs/1.0/blueprints/" target="blank"><strong>Blueprints</strong></a> <strong>sora</strong> implementiert wurde. Innerhalb der <em>routes.py</em> befindet sich das <em>RequestMapping</em>, welches für die entsprechenden <strong>query strings</strong> alle Anfragen beantwortet.</p>
+
+<p>Auf dem <a href="https://edn.ioer.de:6443/arcgis/manager/index.html" target="blank">ESRI-Server</a> wurden die Service-Layer implementiert. Der Flask Microservice auf <em>https://monitor.ioer.de/monitor_api/sora</em> nimmt die Requests des <em>Gesis</em>- <a href="/monitor-api-doku/assets/images/sora-arch.png" target="blank"><strong>Location Mapping</strong></a> an. Über die Klasse <em>Request-Manager</em>, werden die Anfragen gestellt. Das die Kommunikation mit einem <em>WPS</em> teilweise sehr kompliziert sein kann, wurde diese Service-Schicht implementiert.</p>
+
+<iframe src="/monitor-api-doku/assets/html/sora-architektur.html" frameborder="0" allowfullscreen="" onload="this.width=screen.width*0.5;this.height=screen.height*0.9;"></iframe>
+
+<h2 id="rest">REST-Schnittstelle</h2>
+<p><em>REST steht für REpresentational State Transfer, API für Application Programming Interface. Gemeint ist damit ein Programmierschnittstelle, die sich an den Paradigmen und Verhalten des World Wide Web (WWW) orientiert und einen Ansatz für die Kommunikation zwischen Client und Server in Netzwerken beschreibt.</em> <a href="https://www.cloudcomputing-insider.de/was-ist-eine-rest-api-a-611116/" target="blank">Quelle</a></p>
+
+<p>Diese Schnittstelle wurde sowohl auf dem <strong>Esri-Server</strong> als auch auf dem <strong>Flask</strong>-Microservice eingesetzt. Da bei allen durch das Projekt genutzten Diensten z.T. sehr große <em>Koordinaten-Anfragen</em> gestellt werden, unterstützt die <strong>API</strong> nur <a href="https://en.wikipedia.org/wiki/POST_(HTTP)"><strong>POST</strong></a>-Requests. Da auf orginären Rasterkarten gerechnet wird, kann die Anfrage je nach Menge der Koordinaten länger Dauern, wird <a href="https://subscription.packtpub.com/book/application_development/9781783287963/6/ch06lvl1sec43/polling" target="_blank"><b>Polling</b></a> angewendet. Hierfür wird dem Clienten auf seine <strong>POST</strong> Anfrage eine JobID übermittelt. Jetzt kann über eine entsprechend parametrisierte <strong>GET</strong> Anfrage periodisch angefragt werden, ob das Ergebnis bereitgestellt wurde.</p>
+
+<hr />
+
+<p>Nachfolgend ist die Kommunikation mit der <strong>REST-API</strong> dokumentiert, um <em>Requests</em> und <em>Responses</em> zu verdeutlichen wurden Beispiele hinterlegt. Der Genau Code für die <em>WPS</em> ist im Punkt <a href="#edn">Esri-Server</a> dokumentiert. Die Code-Beschreibung für Flask ist <a href="#flask">hier</a> zu finden.</p>
+
+<ol>
+  <li><a href="#1-abfrage-der-koordinaten">Abfrage von Indikatorwerten zu Koordinaten</a></li>
+  <li><a href="#2-routing-zum-nächstgelegenen-poi">Routing zum nächstgelegenen POI</a></li>
+  <li><a href="#3-routing-zwischen-zwei-koordinaten">Routing zwischen zwei Koordinaten</a></li>
+</ol>
+
+<h3 id="service-coord">1. Abfrage von Indikatorwerten zu Koordinaten</h3>
+<h4 id="beschreibung">Beschreibung</h4>
+<p>Mit diesem Service können für vorgegebene Koordinaten die jeweiligen Indikatorwerte abgefragt werden. Wird ein <em>Buffer-Wert</em> gesetzt, ermittelt der Service den Durchschnitt des Indikators innhalb des <em>Buffer</em>-Bereichs. Hierbei wird ein quadratische Buffer um jede Koordinate gesetzt, dessen Räumlicher Durchschnitt über den <em>Paramter</em> buffer gesetzt werden kann</p>
+
+<p><strong>Endpoint:</strong> https://monitor.ioer.de/monitor_api/sora/services</p>
+
+<ol>
+  <li><strong>Post</strong> der JSON-Datei:
+    <ul>
+      <li><strong>Query String</strong>: <strong>job</strong>=coordinates</li>
+      <li>
+        <p><strong>Datei</strong>: folgend eine beispielhafte JSON Datei, welche alle notwendigen Parameter übermittelt</p>
+
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w">
+          </span><span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8291</span><span class="p">,</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4340896,28050814"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"2764378,83432727"</span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3058</span><span class="p">,</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4340657,55155301"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"2765292,51267246"</span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3438</span><span class="p">,</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4342453,82536125"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"2764230,5410444"</span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">249</span><span class="p">,</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4339813,12908578"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"2765946,78532257"</span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3800</span><span class="p">,</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4339879,51749317"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"2765648,13305142"</span><span class="p">}],</span><span class="w">
+      </span><span class="s2">"indicators"</span><span class="p">:</span><span class="w">
+          </span><span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"S12RG"</span><span class="p">,</span><span class="s2">"year"</span><span class="p">:</span><span class="s2">"2012"</span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"S12RG"</span><span class="p">,</span><span class="s2">"year"</span><span class="p">:</span><span class="s2">"2015"</span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"F01RG"</span><span class="p">,</span><span class="s2">"year"</span><span class="p">:</span><span class="s2">"2015"</span><span class="p">,</span><span class="s2">"buffer"</span><span class="p">:</span><span class="s2">"100"</span><span class="p">}],</span><span class="w">
+      </span><span class="s2">"epsg"</span><span class="p">:</span><span class="s2">"3035"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>        </div>
+
+        <ul>
+          <li>
+            <p><strong>coordinates</strong>: <em>x/y</em> Koordinaten mit der gesetzten <em>id</em>, hierbei ist es egal ob die Koordinaten als Zahlenwert(.) oder String übergeben werden. Es würde genauso funktionieren:</p>
+
+            <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="err">...</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8291</span><span class="p">,</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4340896.28050814"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"2764378.83432727"</span><span class="p">}</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+
+</span></code></pre></div>            </div>
+          </li>
+          <li><strong>indicators</strong>: <em>id</em> des Indikators und der gewünschte Zeitschnitt, optional ist der <em>buffer</em>, welcher in Meter angegeben wird.</li>
+          <li><strong>epsg</strong>: zugrundeliegendes Koordinatensystem</li>
+          <li>Als Antwort auf den request erfolgt eine <strong>JSON</strong>, welche die <em>JobID</em> beinhaltet und den <em>Status</em>.</li>
+        </ul>
+
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"jobId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j14585674d2434aada462cffe22862324"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"jobStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esriJobSubmitted"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>        </div>
+
+        <p><strong>Beispiel</strong> mit <a href="https://curl.haxx.se/" target="_blank"><b>curl</b></a>:</p>
+
+        <pre><code class="language-curl">  curl --header "Content-Type: application/json" \
+       --request POST \
+       --data '{"coordinates":[{"x":"12.067024122630599","y":"54.1015602797111","id":66},{"x":"12.141539756251","y":"54.1154796784391","id":99}],"indicators":[{"id":"S12RG","year":"2017"}],"epsg":"4326"}' \
+       https://monitor.ioer.de/monitor_api/sora/services?job=coordinates
+</code></pre>
+
+        <p>Als Ergebnis wird dann folgende JSON mit einer Job-ID geliefert:</p>
+
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"jobId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j19e57f40c4a44755a32078d9ad7097f2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"jobStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esriJobSubmitted"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>Wurde dem Clienten die <strong>JobID</strong> als Response übermittelt, kann via HTTP-GET das Ergebnis periodisch angefragt werden. Hat das Backend ein Ergebnis zur Verfügung, wird dieses bereitgestellt.</p>
+
+<ol>
+  <li><strong>GET</strong> des Ergebnisses:
+    <ul>
+      <li><strong>Query Strings</strong>:
+        <ul>
+          <li><strong>job</strong>=coordinates</li>
+          <li><strong>job_id</strong>=id des Jobs aus dem Post-Request, in diesem Beispiel <strong>j14585674d2434aada462cffe22862324</strong></li>
+        </ul>
+      </li>
+      <li>Wird der Job noch berechnet, sendet der Service eine entsprechende Mitteilung als JSON zurück und muss weiter angefragt werden. Liegt das Ergebnis vor, wird das Ergebnis als JSON gesendet.</li>
+    </ul>
+
+    <p><strong>Beispiel</strong> mit <a href="https://curl.haxx.se/" target="_blank"><b>curl</b></a>:</p>
+
+    <pre><code class="language-curl"> curl --request GET \
+      -d 'job=coordinates'
+      -d 'job_id=j19e57f40c4a44755a32078d9ad7097f2'
+      https://monitor.ioer.de/monitor_api/sora/services
+</code></pre>
+
+    <p>rechnet der Service noch wird z.B. folgende JSON als Response geliefert:</p>
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"jobId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jc7e4847561014440a06cd6e4cf2e7fb2"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"jobStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esriJobExecuting"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esriJobMessageTypeInformative"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Submitted."</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esriJobMessageTypeInformative"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Executing..."</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p>ist der Service fertig wird z.B. folgender Response geliefert:</p>
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">     </span><span class="p">{</span><span class="w">
+ </span><span class="s2">"paramName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outputJSON"</span><span class="p">,</span><span class="w">
+ </span><span class="s2">"dataType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GPString"</span><span class="p">,</span><span class="w">
+ </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+ </span><span class="p">{</span><span class="w">
+ </span><span class="s2">"y"</span><span class="p">:</span><span class="w">  </span><span class="s2">"54.1015602797111"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"x"</span><span class="p">:</span><span class="w">  </span><span class="s2">"12.067024122630599"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"values"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"indicator"</span><span class="p">:</span><span class="w">  </span><span class="s2">"S12RG"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"indicator_value"</span><span class="p">:</span><span class="w">  </span><span class="s2">"100.0"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"time"</span><span class="p">:</span><span class="w">  </span><span class="s2">"2017"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+ </span><span class="p">],</span><span class="w">
+     </span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"66"</span><span class="w">
+ </span><span class="p">},</span><span class="w">
+ </span><span class="p">{</span><span class="w">
+ </span><span class="s2">"y"</span><span class="p">:</span><span class="w">  </span><span class="s2">"54.1154796784391"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"x"</span><span class="p">:</span><span class="w">  </span><span class="s2">"12.141539756251"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"values"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"indicator"</span><span class="p">:</span><span class="w">  </span><span class="s2">"S12RG"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"indicator_value"</span><span class="p">:</span><span class="w">  </span><span class="s2">"100.0"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"time"</span><span class="p">:</span><span class="w">  </span><span class="s2">"2017"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+ </span><span class="p">],</span><span class="w">
+     </span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="s2">"99"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">    
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Die folgenden Dienste berechnen mit Hilfe des <a href="https://github.com/GIScience/openrouteservice">Open Route Service</a>, die Wegstrecken zwischen den übergebenen Koordinaten und der Anforderung. Hierbei ist es möglich durch die Variierung der Parameter, die Berechnung zu beeinflussen.</p>
+
+<h3 id="service-routing">2. Routing zum nächstgelegenen POI</h3>
+<h4 id="beschreibung-1">Beschreibung</h4>
+<p>Dieser Service berechnet auf der Grundlage des übergebenen Punktes, die Distanz zum nächst gelegenen POI.</p>
+
+<p><strong>Endpoint:</strong> https://monitor.ioer.de/monitor_api/sora/services</p>
+
+<ol>
+  <li><strong>Post</strong> der JSON-Datei:
+    <ul>
+      <li><strong>Query String</strong>: <strong>job</strong>=routing_poi</li>
+      <li><strong>Datei</strong>: folgend eine beispielhafte JSON Datei, welche alle notwendigen Parameter übermittelt</li>
+    </ul>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w">
+     </span><span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5297</span><span class="p">,</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4339535,6687453"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"2765964,35707297"</span><span class="p">},</span><span class="w">
+     </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4453</span><span class="p">,</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4339873,89116431"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"2764805,05240828"</span><span class="p">},</span><span class="w">
+     </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4989</span><span class="p">,</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4339655,35336738"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"2765570,54764701"</span><span class="p">},</span><span class="w">
+     </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">7789</span><span class="p">,</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4339816,61177691"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"2764105,56506073"</span><span class="p">}</span><span class="w">
+     </span><span class="err">......</span><span class="w">
+     </span><span class="p">],</span><span class="w">
+ </span><span class="s2">"options"</span><span class="p">:[{</span><span class="s2">"profile"</span><span class="p">:</span><span class="s2">"walking"</span><span class="p">,</span><span class="s2">"epsg"</span><span class="p">:{</span><span class="s2">"input"</span><span class="p">:</span><span class="s2">"3035"</span><span class="p">,</span><span class="s2">"output"</span><span class="p">:</span><span class="s2">"25833"</span><span class="p">}}</span><span class="w">
+ </span><span class="p">]}</span><span class="w">
+</span></code></pre></div>    </div>
+    <ul>
+      <li><strong>Optionen innerhalb der JSON:</strong>
+        <ul>
+          <li><strong>options</strong>:
+            <ul>
+              <li><strong>profile</strong>: gibt an, wie der gefundene POI erreicht werden soll. Unterstützt werden im Moment: <em>walking</em>, <em>driving</em></li>
+              <li><strong>epsg</strong>: gibt an, in welchem Koordinatensystem die Punkte sich befinden und können optional auch in eine anderes Koordinatensystem transformiert werden. Hierfür muss der optionale Parameter <em>output</em> angegeben werden.</li>
+              <li><strong>poi</strong>: gibt an, welcher nächst gelegene POI berechnet werden soll. Aktuell werden <strong>Grünflächen</strong> als <em>green_areas</em> und der <strong>Öffentliche Nahverkehr</strong> als <em>public_transport</em>.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><strong>Beispiel</strong> mit <a href="https://curl.haxx.se/" target="_blank"><b>curl</b></a>:</p>
+
+    <pre><code class="language-curl"> curl --header "Content-Type: application/json" \
+         --request POST \
+         --data '{"coordinates":[{"id":5297,"x":"4339535,6687453","y":"2765964,35707297"}],"options":[{"profile":"walking","epsg":{"input":"3035"},"poi":"public_transport"}]}' \
+         https://monitor.ioer.de/monitor_api/sora/services?job=routing_poi
+</code></pre>
+
+    <p>Als Ergebnis wird dann folgende JSON mit einer Job-ID geliefert:</p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+ </span><span class="s2">"jobId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j19e57f40c4a44755a32078d9ad7097f2"</span><span class="p">,</span><span class="w">
+ </span><span class="s2">"jobStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esriJobSubmitted"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li><strong>GET</strong> des Ergebnisses:
+    <ul>
+      <li>Wie im Service <em>coodinates</em>, nur jetzt als job <strong>routing_poi</strong> angegeben</li>
+    </ul>
+
+    <p><strong>Beispiel</strong> mit <a href="https://curl.haxx.se/" target="_blank"><b>curl</b></a>:</p>
+
+    <pre><code class="language-curl"> curl --request GET \
+     -d 'job=routing_poi'
+     -d 'job_id=j19e57f40c4a44755a32078d9ad7097f2'
+     https://monitor.ioer.de/monitor_api/sora/services
+</code></pre>
+
+    <p>rechnet der Service noch wird z.B. folgende JSON als Response geliefert:</p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"jobId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jc7e4847561014440a06cd6e4cf2e7fb2"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"jobStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esriJobExecuting"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esriJobMessageTypeInformative"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Submitted."</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esriJobMessageTypeInformative"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Executing..."</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>ist der Service fertig wird z.B. folgender Response geliefert:</p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"paramName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outputJSON"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"dataType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GPString"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4339535,6687453"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"y"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2765964,35707297"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5297"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                 </span><span class="p">{</span><span class="w">
+                     </span><span class="s2">"endpoint"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                         </span><span class="s2">"x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4339346.90443"</span><span class="p">,</span><span class="w">
+                         </span><span class="s2">"y"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2766960.30919"</span><span class="w">
+                     </span><span class="p">},</span><span class="w">
+                     </span><span class="s2">"distance_open_route"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                         </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1559.4"</span><span class="p">,</span><span class="w">
+                         </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="w">
+                     </span><span class="p">},</span><span class="w">
+                     </span><span class="s2">"duration_open_route"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                         </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1122.8"</span><span class="p">,</span><span class="w">
+                         </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s"</span><span class="w">
+                     </span><span class="p">}</span><span class="w">
+                 </span><span class="p">}</span><span class="w">
+             </span><span class="p">]</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Die Ergebnis-JSON beinhaltet die Koordinaten der nächstgelegenen Grünfläche und die Distanz zu dieser in Meter. Auf der Grundlage des definierten Profiles wird auch die benötigte Zeit angegeben.</p>
+
+<h3 id="service-poi">3. Routing zwischen zwei Koordinaten</h3>
+<h4 id="beschreibung-2">Beschreibung</h4>
+<p>Ähnlich des Services <em><strong>Suche nach den räumlich nächst gelegenen POI</strong></em> berechnet dieser Service die Route und die Distanz zwischen zwei Punkten. Hier werden jedoch der Anfangs- und der Endpunkt übergeben, wodurch die Suche nach dem nächst gelegenen POI entfällt.</p>
+
+<p><strong>Endpoint:</strong> https://monitor.ioer.de/monitor_api/sora/services</p>
+
+<ol>
+  <li><strong>Post</strong> der JSON-Datei:
+    <ul>
+      <li><strong>Query String</strong>: <strong>job</strong>=routing_xy</li>
+      <li><strong>Datei</strong>: folgend eine beispielhafte JSON Datei, welche alle notwendigen Parameter übermittelt</li>
+    </ul>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">     </span><span class="p">{</span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w">
+         </span><span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5297</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"startpoint"</span><span class="p">:</span><span class="w">
+                  </span><span class="p">{</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4583809.29"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"3108954.51"</span><span class="p">},</span><span class="s2">"endpoint"</span><span class="p">:{</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4584822.66"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"3109658.40"</span><span class="p">}</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5298</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"startpoint"</span><span class="p">:</span><span class="w">
+                 </span><span class="p">{</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4580902.38"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"3110862.75"</span><span class="p">},</span><span class="s2">"endpoint"</span><span class="p">:{</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"4583809.29"</span><span class="p">,</span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"3108954.51"</span><span class="p">}</span><span class="w">
+         </span><span class="p">}],</span><span class="w">
+     </span><span class="s2">"options"</span><span class="p">:[{</span><span class="s2">"profile"</span><span class="p">:</span><span class="s2">"walking"</span><span class="p">,</span><span class="s2">"epsg"</span><span class="p">:{</span><span class="s2">"input"</span><span class="p">:</span><span class="s2">"3035"</span><span class="p">,</span><span class="s2">"output"</span><span class="p">:</span><span class="s2">"25833"</span><span class="p">}}]}</span><span class="w">
+</span></code></pre></div>    </div>
+    <ul>
+      <li>Die Optionen innerhalb der JSON sind gleich des Servies <strong>routing_poi</strong></li>
+    </ul>
+  </li>
+  <li><strong>GET</strong> des Ergebnisses:
+    <ul>
+      <li>Wie im Service <em>coodinates</em>, nur jetzt als job <strong>routing_xy</strong> angegeben</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="rdf">RDF</h2>
+
+<p><em>Das Resource Description Framework (RDF, engl. sinngemäß „System zur Beschreibung von Ressourcen“) bezeichnet eine technische Herangehensweise im Internet zur Formulierung logischer Aussagen über beliebige Dinge (Ressourcen). Ursprünglich wurde RDF vom World Wide Web Consortium (W3C) als Standard zur Beschreibung von Metadaten konzipiert. Mittlerweile gilt RDF als ein grundlegender Baustein des Semantischen Webs. RDF ähnelt den klassischen Methoden zur Modellierung von Konzepten wie UML-Klassendiagramme und Entity-Relationship-Modell. Im RDF-Modell besteht jede Aussage aus den drei Einheiten Subjekt, Prädikat und Objekt, wobei eine Ressource als Subjekt mit einer anderen Ressource oder einem Wert (Literal) als Objekt näher beschrieben wird.</em> <a href="https://de.wikipedia.org/wiki/Resource_Description_Framework" target="blank">Quelle</a></p>
+
+<p>Mit der Beschreibung der Indikatoren und deren Kategorien in <strong>RDF</strong>, wurde der Beschluss innerhlab der SoRa Projektmitglieder umgesetzt, eine Beschreibung der Metadaten in RDF durchzuführen. Zur Arbeit mit diesem Format wurde die <em>Python</em>-Bibliothek <a href="https://github.com/RDFLib/rdflib" target="blank"><em>rdflib</em></a> eingesetzt.</p>
+<h3 id="ind">Indikator</h3>
+
+<p><a href="/monitor-api-doku/assets/data/ind.ttl" target="blank" class="btn btn-purple">RDF-Abfrage</a>
+<a href="https://github.com/ioer-dresden/monitor-api/blob/master/app/sora/model/Indicator.py" class="btn btn-green" target="blank">Code</a></p>
+
+<p>Diese Klasse fragt bei der Instaziierung vom <a href="https://ioer-dresden.github.io/monitor-doku/docs/backend" target="blank"><strong>Monitor-Backend</strong></a> alle verfügbaren Indikatoren ab, welche im <strong>Raster</strong>-Format vorliegen. Iterativ werden diese Indikatoren und deren Metadaten dem Graphen hinzugefügt.</p>
+<h3 id="cat">Category</h3>
+
+<p><a href="/monitor-api-doku/assets/data/cat.ttl" target="blank" class="btn btn-purple">RDF-Abfrage</a>
+<a href="https://github.com/ioer-dresden/monitor-api/blob/master/app/sora/model/Category.py" class="btn btn-green" target="blank">Code</a></p>
+
+<p>Ähnlich wie die Indikatoren fragt diese Klasse bei der Instaziierung vom <a href="https://ioer-dresden.github.io/monitor-doku/docs/backend" target="blank"><strong>Monitor-Backend</strong></a> alle verfügbaren Kategorien ab, welche für das <strong>Raster</strong>-Format vorliegen. Iterativ werden diese Kategorien und deren Metadaten dem Graphen hinzugefügt.</p>
+
+<h2 id="flask"><strong>Flask</strong></h2>
+
+<p><a href="https://github.com/ioer-dresden/monitor-api/tree/master/app/sora" target="blank" class="btn btn-purple">Github</a></p>
+
+<p>Dieser Microservice wird für die Kommunikation zwischen Clienten und den <em>WPS</em> eingesetzt, um die Anfragen so leicht wie möglich zu gestalten. Eine Dokumentation zu <strong>Flask</strong> ist unter dem folgenden <a href="http://flask.pocoo.org/" target="blank">Link</a> zu finden.
+Das nochfolgende UML bildet die verwnedeten Klassen ab, welche nachfolgend genauer Dokumentiert werden.</p>
+
+<iframe src="/monitor-api-doku/assets/html/sora-flask.html" frameborder="0" allowfullscreen="" onload="this.width=screen.width*0.5;this.height=screen.height*0.55;"></iframe>
+
+<h3 id="routespy">routes.py</h3>
+
+<p>Hier erfolgt des <strong>Request-Mapping</strong>, indem genau defineirt wird, was bei welchen <strong>query</strong> passiert. Im nachfolgenden Code-Block ist der Quellcode abgebildet.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#RDF-Schnittstelle um sich die Indikatoren als .ttl auszugeben</span>
+<span class="nd">@sora.route</span><span class="p">(</span><span class="s">"/indicator"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'GET'</span><span class="p">,</span> <span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">get_indicators</span><span class="p">():</span>
+    <span class="n">indicator</span> <span class="o">=</span> <span class="n">Indicator</span><span class="p">(</span><span class="n">json_url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">indicator</span><span class="o">.</span><span class="n">g</span>
+    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">abort</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">abort</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="s">"turtle"</span><span class="p">),</span> <span class="n">mimetype</span><span class="o">=</span><span class="s">"text/n3"</span><span class="p">)</span>
+
+<span class="c">#RDF-Schnittstelle um sich die Kategorien als .ttl auszugeben</span>
+<span class="nd">@sora.route</span><span class="p">(</span><span class="s">"/category"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'GET'</span><span class="p">,</span> <span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">get_categories</span><span class="p">():</span>
+    <span class="n">category</span> <span class="o">=</span> <span class="n">Category</span><span class="p">(</span><span class="n">json_url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">category</span><span class="o">.</span><span class="n">g</span>
+    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">abort</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">abort</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="s">"turtle"</span><span class="p">),</span> <span class="n">mimetype</span><span class="o">=</span><span class="s">"text/n3"</span><span class="p">)</span>
+
+<span class="c">#Ausgabe der RDF-Ontologie des IÖR</span>
+<span class="nd">@sora.route</span><span class="p">(</span><span class="s">"/ontology"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'GET'</span><span class="p">,</span> <span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">get_ontology</span><span class="p">():</span>
+    <span class="nb">dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s">"{}/app/sora/data/ontology.ttl"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">dir</span><span class="p">),</span> <span class="n">format</span><span class="o">=</span><span class="s">"turtle"</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">Response</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="s">"turtle"</span><span class="p">),</span> <span class="n">mimetype</span><span class="o">=</span><span class="s">'text/n3'</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s">'Access-Control-Allow-Origin'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'*'</span>
+    <span class="k">return</span> <span class="n">response</span>
+
+<span class="c">#Schnittstelle um die Esri-Geoprocessing Dienste zu nutzen</span>
+<span class="nd">@sora.route</span><span class="p">(</span><span class="s">'/services'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'GET'</span><span class="p">,</span> <span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">get</span><span class="p">():</span>
+    <span class="n">job</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'job'</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">None</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span> <span class="ow">or</span> <span class="bp">None</span>
+    <span class="n">job_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'job_id'</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">None</span>
+    <span class="c"># test if JSON is valid</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c"># validate json</span>
+        <span class="c"># set request and get response from esri server</span>
+        <span class="n">request_handler</span> <span class="o">=</span> <span class="n">ESRIServerManager</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">job_id</span><span class="o">=</span><span class="n">job_id</span><span class="p">)</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">"result: </span><span class="se">\n</span><span class="si">%</span><span class="s">s"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">request_handler</span><span class="o">.</span><span class="n">get_request</span><span class="p">()))</span>
+        <span class="k">return</span> <span class="n">request_handler</span><span class="o">.</span><span class="n">get_request</span><span class="p">()</span>
+    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">job</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">error</span><span class="o">=</span><span class="s">'no job query, API-Doku: https://ioer-dresden.github.io/monitor-api-doku/docs/sora'</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">InvalidUsage</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">status_code</span><span class="o">=</span><span class="mi">410</span><span class="p">)</span>
+
+<span class="c"># Error handling</span>
+<span class="nd">@sora.errorhandler</span><span class="p">(</span><span class="n">InvalidUsage</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">handle_invalid_usage</span><span class="p">(</span><span class="n">error</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">status_code</span>
+    <span class="k">return</span> <span class="n">response</span>
+</code></pre></div></div>
+
+<p>Da die Code Kommentare schon sehr gut wiedergeben was funktionale Betsandteile sindb g, soll nicht einzeln beschrieben werden was die instanziierten Klassen tun, dies ist nachfolgende dokumentiert.</p>
+
+<h3 id="esriservermanager">EsriServerManager</h3>
+
+<p><a href="https://github.com/ioer-dresden/monitor-api/blob/master/app/sora/ESRIServerManager.py" class="btn btn-green" target="blank">Code</a></p>
+
+<p>Diese Klasse hat die Aufgabe anhand der übergebenen <em>Job-ID</em> den entsprechenden Service auf dem <a href="#edn"><strong>Esri-Server</strong></a> aufzurufen und das Ergebnis an den Clienten zu streamen. Treten dabei Fehler (Exceptions) auf oder ist die Anfrage durch den Clienten falsch formuliert, wird eine entsprechende Meldung als Response gesendet. Somit ist es dem Clienten möglich darauf zu reagieren.</p>
+
+<h2 id="edn">Esri-Server</h2>
+
+<p><a href="https://github.com/ioer-dresden/sora-services" target="blank" class="btn btn-purple">Github</a></p>
+
+<p>Um arcpy auf dem Server einzubinden, ist man auf einen <strong>ESRI-Server</strong> angewiesen. Alle Geo-Prozessing Services wurden in <strong>OOP-Python</strong> geschrieben und mit <a href="http://desktop.arcgis.com/de/arcmap/" target="blank"><strong><em>ArcMap</em></strong></a> getestet. Die Veröffentlichung eines <em>Geo-Processing Services</em> erfolgte nach der Offiziellen <a href="https://enterprise.arcgis.com/de/server/latest/publish-services/windows/a-quick-tour-of-publishing-a-geoprocessing-service.htm" target="blank">Anleitung</a>.</p>
+
+<h3 id="coordinates">Abfrage von Indikatorwerten zu Koordinaten</h3>
+
+<p><a href="https://edn.ioer.de/arcgis/rest/services/SORA/coordinates/GPServer" target="blank" class="btn btn-blue"><strong>Rest-API</strong></a></p>
+
+<p>Mit diesem Service können für vorgegebene Koordinaten die jeweiligen Indikatorwerte abgefragt werden. Wird ein Bufferwert gesetzt, ermittelt der Service den Durchschnitt des Indikators innhalb des Buffer-Bereichs. Hierbei wird ein quadratische Buffer um jede Koordinate gesetzt, dessen Räumlicher Durchschnitt über den <strong>Paramter</strong> <em>buffer</em> gesetzt werden kann (<a href="#json-paramter-coord">siehe Paramter JSON</a>). Aus diesem <em>Buffer</em> wird durch eine Umgebungsanalyse alle enthaltenen Pixelwerte ermittelt und deren Durchschnittliches Ergebnis an den Response für jede Koordinate angehangen. 
+Nachfolgend ist für den Service das <strong>UML</strong> abgebildet:</p>
+
+<iframe src="/monitor-api-doku/assets/html/sora-coordinates.html" frameborder="0" allowfullscreen="" onload="this.width=screen.width*0.5;this.height=screen.height*0.55;"></iframe>
+
+<p>Anhand der Main-Methode wird ersichtlich, wie die vom <em>TaskRepository</em> aufgerufenen Methoden als <em>Workflow</em> dienen um das angefragte Ergebnis zu generieren.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c"># ENV Settings</span>
+    <span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">overwriteOutput</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="c"># how to round the values</span>
+    <span class="nb">round</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="c"># the keys</span>
+    <span class="n">indicators</span> <span class="o">=</span> <span class="s">"indicators"</span>
+    <span class="n">indicator_id</span> <span class="o">=</span> <span class="s">"id"</span>
+    <span class="n">year_id</span> <span class="o">=</span> <span class="s">"year"</span>
+    <span class="n">buffer_id</span> <span class="o">=</span> <span class="s">"buffer"</span>
+    <span class="c"># user input</span>
+    <span class="nb">input</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">task</span> <span class="o">=</span> <span class="n">Result</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="nb">round</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">[</span><span class="n">indicators</span><span class="p">]:</span>
+        <span class="c"># settings</span>
+        <span class="n">indicator</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="n">indicator_id</span><span class="p">]</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="n">year_id</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">"buffer"</span><span class="p">):</span>
+            <span class="nb">buffer</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="n">buffer_id</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">buffer</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="c"># create the result</span>
+        <span class="n">task</span><span class="o">.</span><span class="n">getImagePath</span><span class="p">(</span><span class="n">indicator</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+        <span class="n">task</span><span class="o">.</span><span class="n">extractInput</span><span class="p">()</span>
+        <span class="n">task</span><span class="o">.</span><span class="n">createPixelValues</span><span class="p">(</span><span class="nb">buffer</span><span class="o">=</span><span class="nb">buffer</span><span class="p">)</span>
+
+
+    <span class="n">arcpy</span><span class="o">.</span><span class="n">SetParameterAsText</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">extractJSON</span><span class="p">()))</span>
+</code></pre></div></div>
+
+<p>Im ersten Schritt wird die in der Beschreibung der Rest-Schnittstelle doukumentierte <a href="#service-coord">JSON</a> geparst und alle notwendigen Informationen aus dieser entnommen. Dann wird das entspreche <em>GeoTIFF</em> herausgesucht und der Pixelwert für jede Koordinate ermittelt. Ist ein Buffer gesetzt, wird für den gegebenen Indikator der entsprechende Wert ermittelt.</p>
+
+<h2 id="routing-xy">Routing zwischen zwei Koordinaten</h2>
+
+<p><a href="https://edn.ioer.de/arcgis/rest/services/SORA/routing_xy/GPServer" target="blank" class="btn btn-blue"><strong>Rest-API</strong></a></p>
+
+<p>Mit diesem Srvice kann die Lauf/Fahrdistanz zwischen zwei Koordinaten berechnet werden. Für die Berechnung der Distanz wird der Routing-Dienst <a href="https://openrouteservice.org/" target="blank"><em>Open Route Service</em></a> eingesetzt, welcher von der Uni Heidelberg entwickelt wurde. Dieser Routing Dienst wird auf dem monitor.ioer.de Server lokal gehostet.</p>
+
+<iframe src="/monitor-api-doku/assets/html/sora-routing.html" frameborder="0" allowfullscreen="" onload="this.width=screen.width*0.5;this.height=screen.height*0.55;"></iframe>
+
+<p>Im ersten Schritt werdebn aus dem <a href="#service-routing">JSON-Request</a> die notwendigen Paramter geparst. Dann müssen abweichende Koordinaten (der <em>Open Route Service</em> kann nur mit dem Koordinatensystem EPSG:4326 arbeiten) transformiert werden. Anschließend kann die Distanz bestimmt und ein <a href="#service-routing">Response</a> gesendet werden.</p>
+
+<h2 id="routing-poi">Routing zum nächstgelegenen POI</h2>
+
+<p><a href="https://edn.ioer.de/arcgis/rest/services/SORA/routing_nearestPOI/GPServer" target="blank" class="btn btn-blue"><strong>Rest-API</strong></a></p>
+
+<p>Ähnlich wie bei dem Service zur Bestimmung der Distanz zwischen zwei Kooridnaten, nutzt auch dieser <em>WPS</em> den <a href="https://openrouteservice.org/" target="blank"><em>Open Route Service</em></a> um die Distanz zu berechnen. Jedoch werden in dem dokumentierten Dienst durch eine topographische-Umfeldanalyse die nähesten POI bestimmt und deren Distanz. Hierfür wurde eine Datenbank erstellt, welche zum jetzigen Zeitpunkt alle öffentlich zugänglichen Grünflächen und Haltestellten für den öffentlichen Nahverkehr in ganz Deutschland beinhalten. Auf dieser Grundlage kann nach der transformation der Koordnaten in das EPSG:4236 (falls nötig) für alle Koordinaten der näheste POI bestimmt werden. Dies ist mit der arcpy Funktion <a href="https://pro.arcgis.com/de/pro-app/tool-reference/analysis/generate-near-table.htm" target="blank"><em>nearest Table</em></a> erfolgt.</p>
+
+<iframe src="/monitor-api-doku/assets/html/sora-routing-poi.html" frameborder="0" allowfullscreen="" onload="this.width=screen.width*0.5;this.height=screen.height*0.55;"></iframe>
+
+<h1 id="probleme">Probleme</h1>
+
+<p>Bei allen Diensten verusacht die Koordinatentransformation eine starke Verlangsamung des Rechenprozesses, was an arcpy liegt. Hierfür muss eine bessere Funktionalität gefunden werden. Leider ist man bei den ESRI-Servern auf arcpy angeweisen. Anbei der verantwortliche Code:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">transformPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">epsg_In</span><span class="p">,</span> <span class="n">epsg_OUT</span><span class="p">):</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">PointGeometry</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialReference</span><span class="p">(</span><span class="n">epsg_In</span><span class="p">))</span><span class="o">.</span><span class="n">projectAs</span><span class="p">(</span>
+        <span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialReference</span><span class="p">(</span><span class="n">epsg_OUT</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">point</span><span class="o">.</span><span class="n">centroid</span>
+</code></pre></div></div>
+
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
