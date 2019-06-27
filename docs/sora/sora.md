@@ -2,6 +2,7 @@
 layout: default
 title: Sora
 has_children: false
+nav_order: 2
 permalink: /docs/sora
 ---
 # [SoRa](http://www.sora-projekt.de/){:target="blank"} - Sozial-Raumwissenschaftliche Forschungsdateninfrastruktur
@@ -21,6 +22,9 @@ Das Backend hat vor allem die Aufgabe die im SoRa Projekt gestellten Anforderung
 - [**Flask** (monitor.ioer.de)](#flask)
 - [**Esri-Server** (edn.ioer.de)](#edn)
     - [Abfrage von Indikatorwerten zu Koordinaten](#coordinates)
+    - [Routing zwischen zwei Koordinaten](#routing-xy)
+    - [Routing zum nächstgelegenen POI](#routing-poi)
+- [**Probleme**](#probleme)
 
 ## Architektur
 
@@ -466,3 +470,31 @@ def main():
 
 Im ersten Schritt wird die in der Beschreibung der Rest-Schnittstelle doukumentierte [JSON](#service-coord) geparst und alle notwendigen Informationen aus dieser entnommen. Dann wird das entspreche _GeoTIFF_ herausgesucht und der Pixelwert für jede Koordinate ermittelt. Ist ein Buffer gesetzt, wird für den gegebenen Indikator der entsprechende Wert ermittelt.
 
+## Routing zwischen zwei Koordinaten {#routing-xy} 
+
+[**Rest-API**](https://edn.ioer.de/arcgis/rest/services/SORA/routing_xy/GPServer){:target="blank"}{: .btn .btn-blue }
+
+Mit diesem Srvice kann die Lauf/Fahrdistanz zwischen zwei Koordinaten berechnet werden. Für die Berechnung der Distanz wird der Routing-Dienst [_Open Route Service_](https://openrouteservice.org/){:target="blank"} eingesetzt, welcher von der Uni Heidelberg entwickelt wurde. Dieser Routing Dienst wird auf dem monitor.ioer.de Server lokal gehostet.
+
+<iframe src="{{site.baseurl}}/assets/html/sora-routing.html" frameborder="0" allowfullscreen onload="this.width=screen.width*0.5;this.height=screen.height*0.55;"></iframe>
+
+Im ersten Schritt werdebn aus dem [JSON-Request](#service-routing) die notwendigen Paramter geparst. Dann müssen abweichende Koordinaten (der _Open Route Service_ kann nur mit dem Koordinatensystem EPSG:4326 arbeiten) transformiert werden. Anschließend kann die Distanz bestimmt und ein [Response](#service-routing) gesendet werden.
+
+## Routing zum nächstgelegenen POI {#routing-poi}
+
+[**Rest-API**](https://edn.ioer.de/arcgis/rest/services/SORA/routing_nearestPOI/GPServer){:target="blank"}{: .btn .btn-blue }
+
+Ähnlich wie bei dem Service zur Bestimmung der Distanz zwischen zwei Kooridnaten, nutzt auch dieser _WPS_ den [_Open Route Service_](https://openrouteservice.org/){:target="blank"} um die Distanz zu berechnen. Jedoch werden in dem dokumentierten Dienst durch eine topographische-Umfeldanalyse die nähesten POI bestimmt und deren Distanz. Hierfür wurde eine Datenbank erstellt, welche zum jetzigen Zeitpunkt alle öffentlich zugänglichen Grünflächen und Haltestellten für den öffentlichen Nahverkehr in ganz Deutschland beinhalten. Auf dieser Grundlage kann nach der transformation der Koordnaten in das EPSG:4236 (falls nötig) für alle Koordinaten der näheste POI bestimmt werden. Dies ist mit der arcpy Funktion [_nearest Table_](https://pro.arcgis.com/de/pro-app/tool-reference/analysis/generate-near-table.htm){:target="blank"} erfolgt.
+
+<iframe src="{{site.baseurl}}/assets/html/sora-routing-poi.html" frameborder="0" allowfullscreen onload="this.width=screen.width*0.5;this.height=screen.height*0.55;"></iframe>
+
+# Probleme {#probleme}
+
+Bei allen Diensten verusacht die Koordinatentransformation eine starke Verlangsamung des Rechenprozesses, was an arcpy liegt. Hierfür muss eine bessere Funktionalität gefunden werden. Leider ist man bei den ESRI-Servern auf arcpy angeweisen. Anbei der verantwortliche Code:
+
+```python
+def transformPoint(self,x, y, epsg_In, epsg_OUT):
+    point = arcpy.PointGeometry(arcpy.Point(x, y), arcpy.SpatialReference(epsg_In)).projectAs(
+        arcpy.SpatialReference(epsg_OUT))
+    return point.centroid
+```
