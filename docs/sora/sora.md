@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Sora
-nav_order: 3
-has_children: true
+has_children: false
 permalink: /docs/sora
 ---
 # [SoRa](http://www.sora-projekt.de/){:target="blank"} - Sozial-Raumwissenschaftliche Forschungsdateninfrastruktur
@@ -432,7 +431,7 @@ Nachfolgend ist für den Service das **UML** abgebildet:
 
 <iframe src="{{site.baseurl}}/assets/html/sora-coordinates.html" frameborder="0" allowfullscreen onload="this.width=screen.width*0.5;this.height=screen.height*0.55;"></iframe>
 
-Anhand der Main-Methode wird ersichtlich, wie die vom _TaskRepository_ aufgerufenen Methoden als _Workflow_ dienen um das angefrgte Ergebnis zu generieren.
+Anhand der Main-Methode wird ersichtlich, wie die vom _TaskRepository_ aufgerufenen Methoden als _Workflow_ dienen um das angefragte Ergebnis zu generieren.
 
 ```python
 def main():
@@ -464,4 +463,6 @@ def main():
 
     arcpy.SetParameterAsText(1,json.dumps(task.extractJSON()))
 ```
+
+Im ersten Schritt wird die in der Beschreibung der Rest-Schnittstelle doukumentierte [JSON](#service-coord) geparst und alle notwendigen Informationen aus dieser entnommen. Dann wird das entspreche _GeoTIFF_ herausgesucht und der Pixelwert für jede Koordinate ermittelt. Ist ein Buffer gesetzt, wird für den gegebenen Indikator der entsprechende Wert ermittelt.
 
