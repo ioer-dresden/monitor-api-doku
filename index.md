@@ -26,4 +26,4 @@ Die anderen Module haben folgende Aufgaben:
 
 ______
 
-Das **Deployment** mit allen notwendigen Tools und Server-Pfaden ist in folgenden [**PDF**]({{site.baseurl}}/assets/data/deployment.pdf){:target="blank"} festgehalten.
+Das **Deployment** mit allen notwendigen Tools und Server-Pfaden ist in folgenden [**PDF**]({{site.baseurl}}/assets/data/deployment.pdf){:target="blank"}.
